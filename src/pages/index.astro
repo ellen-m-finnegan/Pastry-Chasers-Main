@@ -1,0 +1,50 @@
+---
+title: "Home";
+description: "Home page for Pastry Chasers application.";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BackToTopButton from "../components/BackToTopButton.astro";
+import SignUp from "../components/SignUp.svelte";
+
+const imageUrl = "/public/images/logo.png";
+
+---
+
+<BaseLayout>
+    <div slot="main">
+    <div class="container-fluid mt-5 home-background">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img
+            src={imageUrl}
+            class="img-fluid custom-rounded"
+            alt="Descriptive Alt Text"
+          />
+        </div>
+        <div class="col-md-6">
+          <div class="jumbotron p-5 custom-rounded bg-light shadow">
+            <h1 class="display-4 text-center mb-2">Welcome to Pastry Chasers</h1>
+            <div
+              class="text-center mt-2 mb-4 d-flex justify-content-center align-items-center"
+            >
+              <span class="lead">Food for Thought </span>
+              <img
+                src="/images/thoughtIcon.png"
+                alt="Thought Icon"
+                class="detail-icon-original"
+              />
+            </div>
+            <hr class="my-4" />
+            <p class="detail-info text-center fs-6">
+              Love to run but can't find the motivation? Let us inspire you! <br />
+            </p>
+            <div class="d-flex justify-content-center mt-4">
+              <SignUp client:load />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <BackToTopButton />
+  </div>
+</BaseLayout>

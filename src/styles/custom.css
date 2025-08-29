@@ -6,3 +6,64 @@
   font-family: "Helvetica Neue", Arial, sans-serif;
   padding: 0;
 }
+
+.detail-icon-original {
+  vertical-align: middle;
+  margin-right: 2px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  padding: 0;
+}
+
+.detail-info {
+  color: #343a40;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.home-background {
+  background-color: #f8e4b8 !important;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.custom-rounded {
+  border-radius: 15px;
+}
+
+.jumbotron {
+  background-color: #d19a66 !important;
+}
+
+.container-background {
+  background-color: #d19a66;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.title-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  background-color: #ffffff;
+  color: #ff4d6d;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-back-to-top img {
+  width: 24px; /* Adjust size as needed */
+  height: 24px; /* Adjust size as needed */
+}
