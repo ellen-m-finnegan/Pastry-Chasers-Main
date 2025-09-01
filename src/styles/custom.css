@@ -67,3 +67,69 @@
   width: 24px; /* Adjust size as needed */
   height: 24px; /* Adjust size as needed */
 }
+
+.btn-primary {
+  background-color: #6d8d98 !important;
+  border-color: #6d8d98 !important;
+}
+
+.title-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.story-with-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.call-to-action {
+  background-color: #ff4d6d;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.intro,
+.story,
+.development,
+.future-plans,
+.call-to-action {
+  margin-bottom: 2rem;
+}
+
+.development-journey h2,
+.development-journey h5 {
+  margin-bottom: 15px;
+}
+
+.development-journey p,
+.development-journey ul {
+  margin-top: 0;
+}
+
+.contact-form {
+  padding: 20px;
+  border: 1px solid #f4f2f2;
+  border-radius: 10px;
+  background: #f8e4b8;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-response {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.form-response.success {
+  color: green;
+}
+
+.form-response.error {
+  color: red;
+}

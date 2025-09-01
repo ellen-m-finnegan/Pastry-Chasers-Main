@@ -1,0 +1,222 @@
+---
+title: "About Pastry Chasers";
+description: "Describes the story behind Pastry Chasers, development process and contact form";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BackToTopButton from "../components/BackToTopButton.astro";
+---
+
+<BaseLayout>
+  <div slot="main" class="container mt-5">
+    <div class="title-button-container">
+      <h1 class="display-4">About Pastry Chasers</h1>
+    <!-- <img src="/images/.png" alt="image" /> finda and add image here for aesthetics-->  
+    </div>
+
+    <div class="container container-background">
+      <!-- Section 1: Story with Pastry Chasers Image -->
+      <div class="row">
+        <div class="col-md-6">
+          <section class="story-with-image">
+            <h2
+              class="bg-secondary text-white px-2 py-1 rounded"
+              style="display: inline-block;"
+            >
+              The Story Behind Pastry Chasers
+            </h2>
+            <p>
+              Pastry Chasers began with a group of friends who love to run and love 
+              pastries. As someone who loves running, designing and
+              coding - I wanted to work on a project that could incorporate all
+              three and make a website for a run club where running is only a means
+              of getting to eat more pastries.
+              <br /><br />
+              While working on Pastry Chasers, I dove deep into front-end development, experimenting
+              with new technologies and focusing on making the site as user-friendly
+              as possible. It’s been a rewarding journey of learning and creating
+              something that I hope will bring more people to running.
+            </p>
+          </section>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <section class="call-to-action">
+            <h2>Get Involved</h2>
+            <p>
+              I’d love to hear your feedback and suggestions! Feel free to reach
+              out via the contact form below or connect with me on social media.
+              Your input helps make Pastry Chasers better for everyone.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+      <!-- Section 2: Development Journey and Call to Action -->
+    <div class="container container-background">
+      <div class="row">
+
+        <!-- Left column with Development Journey text -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <section class="development-journey">
+            <h2
+              class="bg-secondary text-white px-2 py-1 rounded"
+              style="display: inline-block;"
+            >
+              My Development Journey
+            </h2>
+            <p class="flex-grow-1 d-flex align-items-center">
+              This project has been a fantastic learning experience. From
+              designing the user interface to implementing interactive features,
+              I’ve had the chance to experiment with modern front-end
+              technologies and frameworks.
+            </p>
+          </section>
+        </div>
+        
+        <!-- Right column with highlights list -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <section class="development-journey">
+            <h5
+              class="bg-secondary text-white px-2 py-1 rounded"
+              style="display: inline-block;"
+            >
+              Highlights
+            </h5>
+            <ul>
+              <li>
+                Developed using Astro, Svelte, HTML, CSS, Bootstrap, and
+                JavaScript
+              </li>
+              <li>
+                Implemented responsive design for a seamless experience on all
+                devices
+              </li>
+              <li>
+                Integrated APIs to provide dynamic weather updates
+              </li>
+              <li>
+                Applied best practices in UI/UX design to enhance usability
+              </li>
+              <li>Found great new running routes</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Contact Form -->
+    <div class="container container-background mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h2
+            class="bg-secondary px-2 py-1 rounded"
+            style="display: inline-block;"
+          >
+            Get in Touch
+          </h2>
+          <section class="contact-form">
+            <h3>Contact Us</h3>
+            <form
+              action="https://formspree.io/f/xvgboqwn"
+              method="POST"
+              id="contact-form"
+            >
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="form-control"
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block"
+                >Send Message</button
+              >
+              <div id="form-response" class="form-response"></div>
+            </form>
+          </section>
+        </div>
+          <div class="col-md-6 image-container">
+          <!-- <img src="/images/.png" alt="image" class="story-image"/> find and add image here for aesthetics--> 
+      </div>
+    </div>
+      <BackToTopButton />
+  </div>
+</BaseLayout>
+
+<script>
+  // Handle form submission and validation
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const form = event.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const formResponse = document.getElementById("form-response");
+
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            formResponse.textContent = "Thank you for your message!";
+            formResponse.className = "form-response success";
+            form.reset();
+          } else {
+            return response.json().then((data) => {
+              if (Object.hasOwn(data, "errors")) {
+                formResponse.textContent = data.errors
+                  .map((error) => error.message)
+                  .join(", ");
+                formResponse.className = "form-response error";
+              } else {
+                formResponse.textContent =
+                  "Oops! There was a problem submitting your form";
+                formResponse.className = "form-response error";
+              }
+            });
+          }
+        })
+        .catch((error) => {
+          formResponse.textContent = `Oops! There was a problem submitting your form: ${error.message}`;
+          formResponse.className = "form-response error";
+        });
+    });
+</script>
