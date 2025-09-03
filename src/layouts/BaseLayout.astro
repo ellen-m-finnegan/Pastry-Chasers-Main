@@ -1,27 +1,51 @@
 ---
 title: "Base Layout";
-description: "The base layout for the Pastry Chasers website, including the header and footer components.";
+description: "This is the base layout for the site.";
 
 import "../styles/custom.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pastry Chasers</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/running-croissant.png">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/images/burgerIcon.png" />
+  </head>
+  <body>
     <Header />
+
     <main class="container mt-5">
-        <slot name="main" />
+      <!-- Named slot for main content -->
+      <slot name="main" />
     </main>
+    
     <Footer />
-</body>
+
+    <script>
+      const searchForm = document.getElementById("searchForm");
+      if (searchForm) {
+        searchForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const query = (
+            document.getElementById("searchQuery") as HTMLInputElement
+          ).value;
+          if (query) {
+            sessionStorage.setItem("searchQuery", query);
+            window.location.href = "/searchResults";
+          }
+        });
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </body>
 </html>

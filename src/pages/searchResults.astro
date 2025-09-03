@@ -1,0 +1,19 @@
+---
+title: "Search Exercises";
+description: "Allows users to search for exercises based on keywords and diet filters.";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SearchResult from "../components/SearchResult.svelte";
+import BackToTop from "../components/BackToTop.astro";
+---
+
+<BaseLayout>
+  <div slot="main" class="container mt-5">
+    <div class="title-button-container">
+      <h1 class="display-4">Search Results</h1>
+      <img src="/images/running-croissant2.png" alt="running croissant" />
+    </div>
+    <SearchResult client:load />
+    <BackToTop/>
+  </div>
+</BaseLayout>

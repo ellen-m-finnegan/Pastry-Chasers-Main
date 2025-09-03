@@ -1,17 +1,25 @@
 ---
 title: "Home";
-description: "Home page for Pastry Chasers application.";
+description: "Home page for Pastry Chasers application that provides updates on when the next run is.";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BackToTopButton from "../components/BackToTopButton.astro";
-import SignUp from "../components/SignUp.svelte";
+import RandomItem from "../components/RandomItem.svelte";
+import { getExercises } from "../services/exerciseService.js";
+import ExerciseCard from "../components/ExerciseCard.svelte";
+import BackToTop from "../components/BackToTop.astro";
 
-const imageUrl = "/public/images/logo.png";
+const imageUrl = "/images/logo.png";
 
+const params = {
+  type: "strength",
+  limit: 3,
+};
+
+const exercises = await getExercises(params);
 ---
 
 <BaseLayout>
-    <div slot="main">
+  <div slot="main">
     <div class="container-fluid mt-5 home-background">
       <div class="row align-items-center">
         <div class="col-md-6">
@@ -27,7 +35,7 @@ const imageUrl = "/public/images/logo.png";
             <div
               class="text-center mt-2 mb-4 d-flex justify-content-center align-items-center"
             >
-              <span class="lead">Food for Thought </span>
+              <span class="lead">Get Motivated! </span>
               <img
                 src="/images/thoughtIcon.png"
                 alt="Thought Icon"
@@ -37,14 +45,34 @@ const imageUrl = "/public/images/logo.png";
             <hr class="my-4" />
             <p class="detail-info text-center fs-6">
               Love to run but can't find the motivation? Let us inspire you! <br />
+              Click below to get a random exercise to try or browse our exercises
+              for endless inspiration!
             </p>
             <div class="d-flex justify-content-center mt-4">
-              <SignUp client:load />
+              <RandomItem client:load />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <BackToTopButton />
+
+    <div class="container mt-5 container-background">
+      <div class="title-button-container">
+        <h2 class="display-4">Popular Exercises</h2>
+        <a href="/browse" class="btn btn-secondary btn-lg"
+          >See All Exercises</a
+        >
+      </div>
+      <div class="card-group row row-cols-1 row-cols-md-3 g-4">
+        {
+          exercises && exercises.map((exercise) => (
+            <div class="col-md-4">
+              <ExerciseCard exercise={exercise} client:load />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <BackToTop />
   </div>
 </BaseLayout>
