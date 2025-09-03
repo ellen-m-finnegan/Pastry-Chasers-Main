@@ -1,0 +1,15 @@
+---
+title: "Display Exercises";
+description: "Displays a single exercise with an image, instructions and muscle groups.";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BackToTop from "../components/BackToTop.astro";
+import DisplayExercises from "../components/DisplayExercise.svelte";
+---
+
+<BaseLayout>
+  <div slot="main" class="container mt-5">
+    <DisplayExercises client:load />
+    <BackToTop />
+  </div>
+</BaseLayout>

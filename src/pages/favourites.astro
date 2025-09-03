@@ -1,0 +1,15 @@
+---
+title: "Favourites";
+description: "Displays a list of favourited exercises.";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FavouritesList from "../components/FavouritesList.svelte";
+import BackToTop from "../components/BackToTop.astro";
+---
+
+<BaseLayout>
+  <div slot="main">
+    <FavouritesList client:only="svelte" />
+    <BackToTop />
+  </div>
+</BaseLayout>
