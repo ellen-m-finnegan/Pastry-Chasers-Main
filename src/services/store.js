@@ -1,4 +1,4 @@
-// Svelte store for storing the current reciie and search query
+// Svelte store for storing the current exercise and search query
 import { writable } from "svelte/store";
 
 // Check if the code is running in the browser
