@@ -35,7 +35,7 @@
   const toggleFavourite = () => {
     exercise.update((current) => {
       if (isFav) {
-        removeFavourite(current.id);
+        removeFavourite(current.name);
         showRemovedPopup = true;
         setTimeout(() => (showRemovedPopup = false), 2000); // Hide popup after 2 seconds
       } else {
