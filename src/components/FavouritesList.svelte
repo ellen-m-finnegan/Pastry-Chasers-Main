@@ -4,12 +4,14 @@
   import { getFavourites } from "../services/favourite";
   import ExerciseCard from "./ExerciseCard.svelte";
 
+  // Array to hold all favourited exercises
   let allExercises = [];
 
+  // When the component mounts, load favourites from local storage
   onMount(() => {
     const favourites = getFavourites();
     if (favourites) {
-      allExercises = favourites;
+      allExercises = favourites; // Set the array to the favourites
     }
     console.log("all exercises" + JSON.stringify(allExercises));
   });
@@ -26,6 +28,7 @@
     </div>
     <div class="container container-background">
       <div class="card-group row row-cols-1 row-cols-md-3 g-4">
+        <!-- Loop through allExercises and render an ExerciseCard for each -->
         {#each allExercises as result}
           <ExerciseCard exercise={result} />
         {/each}

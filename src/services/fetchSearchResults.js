@@ -1,4 +1,4 @@
-import { searchExercises } from "./exerciseService";
+import { getExercises } from "./exerciseService";
 
 const API_KEY = "d23c+r1ELW1wx72q4S+UVg==lie4avxP7aBrkZiv";
 const BASE_URL = "https://api.api-ninjas.com/v1/exercises";
@@ -20,7 +20,7 @@ export async function fetchSearchResults({
   if (equipment) params.equipment = equipment;
 
   try {
-    const response = await searchExercises(params);
+    const response = await getExercises(params);
     return response;
   } catch (err) {
     console.error("Failed to fetch search results:", err);

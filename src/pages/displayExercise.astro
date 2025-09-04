@@ -9,7 +9,9 @@ import DisplayExercises from "../components/DisplayExercise.svelte";
 
 <BaseLayout>
   <div slot="main" class="container mt-5">
+    <!-- Svelte component to show exercise details, loaded on client -->
     <DisplayExercises client:load />
+    <!-- Back to top button for easy navigation -->
     <BackToTop />
   </div>
 </BaseLayout>

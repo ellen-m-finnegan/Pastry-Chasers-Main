@@ -1,6 +1,6 @@
 ---
 title: "Browse Exercises";
-description: "Provides selection of options to browse exercises based on muscle groups and equipment.";
+description: "Provides selection of options to browse exercises based on muscle groups and exercise type.";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BackToTop from "../components/BackToTop.astro";
@@ -8,10 +8,12 @@ import BackToTop from "../components/BackToTop.astro";
 
 <BaseLayout>
   <div slot="main" class="container mt-5">
+    <!-- Page title and header image -->
     <div class="title-button-container">
       <h1 class="display-4">Browse Exercises</h1>
       <img src="/images/running-croissant2.png" alt="running croissant" loading="eager"/>
     </div>
+    <!-- Section: Muscle group options -->
     <div class="container-fluid container-background">
       <h4
         class="bg-secondary text-white px-2 py-1 rounded"
@@ -20,6 +22,7 @@ import BackToTop from "../components/BackToTop.astro";
         Muscle groups
       </h4>
       <div class="exercise-options">
+        <!-- Each option is an image with overlay text and a data-option attribute -->
         <div class="exercise-option-container">
           <img
             src="/images/abs.png"
@@ -82,6 +85,8 @@ import BackToTop from "../components/BackToTop.astro";
         </div>
       </div>
     </div>
+
+    <!-- Section: Exercise type options -->
     <div class="container-fluid container-background">
       <h4
         class="bg-secondary text-white px-2 py-1 rounded"
@@ -90,6 +95,7 @@ import BackToTop from "../components/BackToTop.astro";
         Exercise Types
       </h4>
       <div class="exercise-options">
+        <!-- Each option is an image with overlay text and a data-option attribute -->
         <div class="exercise-option-container">
           <img
             src="/images/strength.png"
@@ -142,21 +148,25 @@ import BackToTop from "../components/BackToTop.astro";
         </div>
       </div>
     </div>
-     <BackToTop />
+    <!-- Back to top button for easy navigation -->
+    <BackToTop />
   </div>
 </BaseLayout>
 
 <script>
+  // Wait for DOM to be loaded before adding event listeners
   document.addEventListener("DOMContentLoaded", function () {
+    // Add click event to each exercise option image
     document.querySelectorAll(".exercise-option").forEach((img) => {
       img.addEventListener("click", function (event) {
         const target = event.target as HTMLElement;
         if (!target) return;
+        // Get the selected option from data-option attribute
         const selectedOption = target.getAttribute("data-option");
         console.log(selectedOption);
-
-        // Save the selected option to session storage
+        // Save the selected option to session storage for use on the next page
         sessionStorage.setItem("selectedOption", selectedOption ?? "");
+        // Redirect to the exercises page to show filtered results
         window.location.href = "/exercises";
       });
     });

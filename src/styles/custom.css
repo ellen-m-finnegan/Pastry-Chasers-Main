@@ -1,17 +1,21 @@
+/* Custom rounded corners for images and cards */
 .custom-rounded {
   border-radius: 15px;
 }
 
+/* Primary button styling */
 .btn-primary {
   background-color: #6d8d98 !important;
   border-color: #6d8d98 !important;
 }
 
+/* Secondary button styling */
 .btn-secondary {
   background-color: #ff4d6d !important;
   border-color: #ff4d6d !important;
 }
 
+/* Card styling for exercise cards and search results */
 .card {
   background-color: #f8e4b8 !important;
   border: 1px solid hsl(0, 0%, 87%);
@@ -23,7 +27,7 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Apply hover effects only on devices with larger screens */
+/* Card hover effects for larger screens */
 @media (min-width: 768px) {
   .card:hover {
     transform: scale(1.02); /* Slightly enlarge the card on hover */
@@ -31,41 +35,45 @@
   }
 }
 
+/* Home page background styling */
 .home-background {
   background-color: #f8e4b8 !important;
   padding: 25px;
   border-radius: 10px;
 }
 
+/* Body background color */
 body {
   background-color: #b5ead7 !important;
 }
 
+/* Jumbotron styling for hero sections */
 .jumbotron {
   background-color: #d19a66 !important;
 }
 
+/* Exercise details layout */
 .exercise-details {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
+/* Styling for detail labels and info */
 .detail-name {
   font-weight: bold;
   color: #4b2e1b;
   margin-right: 5px;
 }
-
 .detail-info {
   color: #343a40;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-
 .detail-link {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Icon styling for details and buttons */
 .detail-icon {
   width: 30px;
   height: 30px;
@@ -74,7 +82,6 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   padding: 0;
 }
-
 .detail-icon-original {
   vertical-align: middle;
   margin-right: 2px;
@@ -82,12 +89,14 @@ body {
   padding: 0;
 }
 
+/* Center content horizontally and vertically */
 .center-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Card sizing for fixed layouts */
 .fixed-size-card {
   width: 100%;
   height: auto; /* Adjust the height as needed */
@@ -95,31 +104,30 @@ body {
   flex-direction: column;
   align-items: flex-start;
 }
-
 .fixed-size-card .card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-
 .fixed-size-card .card-image {
   width: 100%;
   height: 200px; /* Adjust the height as needed */
   object-fit: cover;
 }
 
+/* Pagination controls styling */
 .pagination-controls {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-top: 10px;
 }
-
 .page-number {
   margin: 0 10px;
 }
 
+/* Muscle group container and image styling */
 .muscleContainer {
   display: flex;
   justify-content: space-between;
@@ -137,6 +145,7 @@ body {
   height: auto;
 }
 
+/* Search result card styling */
 .sr-card {
   display: flex;
   flex-direction: row;
@@ -148,51 +157,42 @@ body {
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .sr-card-image {
   flex: 1;
   margin-right: 20px;
 }
-
 .sr-card-title {
   font-weight: bold;
   color: #56494c;
   margin-bottom: 10px;
 }
-
 .sr-exercise-details {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .sr-detail-item {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
-
 .sr-detail-icon {
   width: 30px;
   height: 30px;
   margin-right: 5px;
 }
-
 .sr-detail-name {
   font-weight: bold;
   color: #56494c;
   margin-right: 5px;
 }
-
 .sr-detail-info {
   color: #343a40;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-
 .sr-detail-link {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-
 .sr-toggle-button {
   background-color: #4b2e1b;
   color: #fff;
@@ -201,37 +201,34 @@ body {
   cursor: pointer;
   margin-top: 10px;
 }
-
 .sr-instructions {
   margin-top: 10px;
 }
-
 .sr-instruction-step {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
-
 .sr-step-number {
   font-weight: bold;
   margin-right: 5px;
 }
-
 .sr-step-text {
   color: #343a40;
 }
 
+/* Badge containers for exercise types */
 .badge-container {
   gap: 0.5em;
   margin-top: 0.5em;
 }
-
 .modal-badge-container {
   gap: 0.5em;
   margin-top: 0.5em;
   justify-content: center;
 }
 
+/* Browse page exercise options layout */
 .exercise-options {
   display: flex;
   flex-wrap: wrap;
@@ -239,16 +236,14 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
-
-/* exercise option container */
+/* Exercise option container */
 .exercise-option-container {
   position: relative;
   flex: 1 1 calc(33.33% - 20px);
   max-width: 300px;
   box-sizing: border-box;
 }
-
-/* Exercise option image */
+/* Exercise option image styling */
 .exercise-option {
   cursor: pointer;
   width: 100%;
@@ -271,6 +266,7 @@ body {
   }
 }
 
+/* Overlay text for exercise option images */
 .overlay-text {
   position: absolute;
   bottom: 0;
@@ -284,6 +280,7 @@ body {
   border-bottom-right-radius: 15px;
 }
 
+/* Container background for sections */
 .container-background {
   background-color: #d19a66;
   padding: 25px;
@@ -291,21 +288,19 @@ body {
   margin-bottom: 20px;
 }
 
+/* Modal styling for exercise details */
 .modal-background {
   background-color: #d19a66;
   padding: 20px;
 }
-
 .modal-header {
   color: #56494c;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-
 .modal-body {
   color: #56494c;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -316,6 +311,7 @@ body {
   z-index: 1040;
 }
 
+/* Button styling for image buttons */
 .image-button {
   border: none;
   background: none;
@@ -323,28 +319,31 @@ body {
   cursor: pointer;
 }
 
+/* Instructions page container */
 .instructions-page-container {
   padding: 20px;
 }
 
+/* Title and button container for page headers */
 .title-button-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Button container for card and modal actions */
 .button-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .modal-button-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
+/* Popup styling for feedback messages */
 .popup {
   position: absolute;
   right: 0;
@@ -356,19 +355,17 @@ body {
   animation: fadeInOut 2s;
   white-space: nowrap;
 }
-
 .popup-modal {
   bottom: 100px;
 }
-
 .popup-display {
   top: 100px;
 }
-
 .popup-card {
   top: 65%;
 }
 
+/* Section styling for about page and story */
 .intro,
 .story,
 .development,
@@ -376,67 +373,59 @@ body {
 .call-to-action {
   margin-bottom: 2rem;
 }
-
 .call-to-action {
   background-color: #ff4d6d;
   color: #ffffff;
   padding: 1rem;
   border-radius: 0.5rem;
 }
-
 .call-to-action a {
   color: #ffffff;
   text-decoration: underline;
 }
-
 .story-with-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .story-image {
   border-radius: 0.5rem;
   margin-top: 1rem;
   height: 100%;
   width: 100%;
 }
-
 .image-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .image-container img {
   max-width: 100%;
   height: auto;
 }
 
+/* Contact form styling */
 .contact-form {
   padding: 20px;
   border: 1px solid #f4f2f2;
   border-radius: 10px;
   background: #f8e4b8;
 }
-
 .form-group label {
   font-weight: bold;
 }
-
 .form-response {
   margin-top: 10px;
   font-size: 1.1em;
 }
-
 .form-response.success {
   color: green;
 }
-
 .form-response.error {
   color: red;
 }
 
+/* Secondary background color for headings */
 .bg-secondary {
   background-color: #ff4d6d !important;
   border-color: #ff4d6d !important;
@@ -444,20 +433,20 @@ body {
   padding: 1rem;
 }
 
+/* Development journey section styling */
 .development-journey h2,
 .development-journey h5 {
   margin-bottom: 15px;
 }
-
 .development-journey p,
 .development-journey ul {
   margin-top: 0;
 }
-
 .flex-grow-1 {
   flex-grow: 1;
 }
 
+/* Back to top button styling */
 .btn-back-to-top {
   display: none;
   position: fixed;
@@ -474,12 +463,12 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .btn-back-to-top img {
   width: 24px; /* Adjust size as needed */
   height: 24px; /* Adjust size as needed */
 }
 
+/* Animation for popups */
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -495,6 +484,7 @@ body {
   }
 }
 
+/* Instruction step styling for exercise instructions */
 .instruction-step {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -502,14 +492,12 @@ body {
   padding: 1rem;
   margin-bottom: 1rem;
 }
-
 .step-number {
   font-size: 1.25rem;
   font-weight: bold;
   color: #3b82f6;
   margin-bottom: 0.5rem;
 }
-
 .step-text {
   font-size: 1rem;
   line-height: 1.5;
