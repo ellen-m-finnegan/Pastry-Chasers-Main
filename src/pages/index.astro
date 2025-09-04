@@ -8,20 +8,26 @@ import { getExercises } from "../services/exerciseService.js";
 import ExerciseCard from "../components/ExerciseCard.svelte";
 import BackToTop from "../components/BackToTop.astro";
 
+// Set logo image URL
 const imageUrl = "/images/logo.png";
 
+// Parameters for fetching popular exercises
 const params = {
   type: "strength",
   limit: 3,
 };
 
+// Fetch exercises from API for display
 const exercises = await getExercises(params);
 ---
 
 <BaseLayout>
+  <!-- Main content area for the home page -->
   <div slot="main">
+    <!-- Hero section with logo and welcome message -->
     <div class="container-fluid mt-5 home-background">
       <div class="row align-items-center">
+        <!-- Left column: logo image -->
         <div class="col-md-6">
           <img
             src={imageUrl}
@@ -29,6 +35,7 @@ const exercises = await getExercises(params);
             alt="Descriptive Alt Text"
           />
         </div>
+        <!-- Right column: welcome message and random exercise button -->
         <div class="col-md-6">
           <div class="jumbotron p-5 custom-rounded bg-light shadow">
             <h1 class="display-4 text-center mb-2">Welcome to Pastry Chasers</h1>
@@ -37,9 +44,9 @@ const exercises = await getExercises(params);
             >
               <span class="lead">Get Motivated! </span>
               <img
-                src="/images/thoughtIcon.png"
-                alt="Thought Icon"
-                class="detail-icon-original"
+                src="/images/motivation-icon.png"
+                alt="Motivation Icon"
+                class="detail-icon-original ms-2"
               />
             </div>
             <hr class="my-4" />
@@ -48,6 +55,7 @@ const exercises = await getExercises(params);
               Click below to get a random exercise to try or browse our exercises
               for endless inspiration!
             </p>
+            <!-- Svelte component for random exercise modal -->
             <div class="d-flex justify-content-center mt-4">
               <RandomItem client:load />
             </div>
@@ -56,23 +64,28 @@ const exercises = await getExercises(params);
       </div>
     </div>
 
+    <!-- Section for popular exercises -->
     <div class="container mt-5 container-background">
       <div class="title-button-container">
         <h2 class="display-4">Popular Exercises</h2>
+        <!-- Button to browse all exercises -->
         <a href="/browse" class="btn btn-secondary btn-lg"
           >See All Exercises</a
         >
       </div>
+      <!-- Display fetched exercises as cards -->
       <div class="card-group row row-cols-1 row-cols-md-3 g-4">
         {
           exercises && exercises.map((exercise) => (
             <div class="col-md-4">
+              <!-- Svelte component for individual exercise card -->
               <ExerciseCard exercise={exercise} client:load />
             </div>
           ))
         }
       </div>
     </div>
+    <!-- Back to top button for easy navigation -->
     <BackToTop />
   </div>
 </BaseLayout>

@@ -9,7 +9,9 @@ import BackToTop from "../components/BackToTop.astro";
 
 <BaseLayout>
   <div slot="main">
+    <!-- Svelte component to show the list of favourites, only loaded on client -->
     <FavouritesList client:only="svelte" />
+    <!-- Back to top button for easy navigation -->
     <BackToTop />
   </div>
 </BaseLayout>

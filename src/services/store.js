@@ -1,43 +1,44 @@
-// Svelte store for storing the current reciie and search query
+// Svelte store for storing the current exercise and search query
 import { writable } from "svelte/store";
 
-// Check if the code is running in the browser
+// Check if the code is running in the browser (for localStorage access)
 const isBrowser =
   typeof window !== "undefined" && typeof localStorage !== "undefined";
 
-// Get the current exercise from localStorage
+// Get the current exercise from localStorage if available
 const storedExercise = isBrowser
   ? localStorage.getItem("currentExercise")
   : null;
 
-// Create a writable store for the current exercise
+// Create a writable Svelte store for the current exercise
 export const currentExercise = writable(
   storedExercise ? JSON.parse(storedExercise) : null
 );
 
-// If the code is running in the browser, subscribe to the currentExercise store
+// Subscribe to the currentExercise store and update localStorage when it changes (browser only)
 if (isBrowser) {
   currentExercise.subscribe((value) => {
     if (value) {
-      // If a exercise is set, store it in localStorage
+      // Store the exercise in localStorage if set
       localStorage.setItem("currentExercise", JSON.stringify(value));
     } else {
-      // If no exercise is set, remove it from localStorage
+      // Remove from localStorage if exercise is unset
       localStorage.removeItem("currentExercise");
     }
   });
 }
-// Set the current exercise in the store
+
+// Function to set the current exercise in the store
 export function setExercise(data) {
   currentExercise.set(data);
 }
 
-// Get the current exercise from the store
+// Function to get the current exercise from localStorage (browser only)
 export const getExercise = () => {
   if (!isBrowser) return null;
   const exercise = localStorage.getItem("currentExercise");
   return exercise ? JSON.parse(exercise) : null;
 };
 
-// Svelte store for storing the search query
+// Svelte store for storing the search query string
 export const searchQuery = writable("");

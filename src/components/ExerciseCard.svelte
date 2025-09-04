@@ -15,9 +15,6 @@
     window.location.href = "/displayExercise";
   };
 
-  // Fall back image if API does not return an image
-  const fallbackImage = "/images/fallbackImage.png";
-
   // Favourites functionality
   let isFav = false;
   let showAddedPopup = false;
@@ -38,7 +35,7 @@
   };
 
   function handleImageError(event) {
-    event.target.src = fallbackImage;
+    event.target.src = "/images/exercicseImage.png";
   }
 
   // On mount, check if exercise is favourite and set isFav accordingly
@@ -62,20 +59,12 @@
 <!-- Exercise Card -->
 <div class="col">
   <div class="card">
-    <!-- Use fallback image if API does not return an image -->
-    {#if exercise.image}
-      <img
-        src={exercise.image}
-        class="card-img-top sr-custom-rounded"
-        alt={exercise.name}
-        on:error={handleImageError}
-      />{:else}
-      <img
-        src={fallbackImage}
+    <!-- Use exercise image as API does not have images for exercises -->
+    <img
+        src="/images/exerciseImage.png"
         class="card-img-top sr-custom-rounded"
         alt={exercise.name}
       />
-    {/if}
 
     <div class="card-body">
       <h5 class="card-title">{exercise.name}</h5>

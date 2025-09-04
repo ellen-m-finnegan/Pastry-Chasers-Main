@@ -1,4 +1,4 @@
-<!-- Bootstrap modal contents, that includes same functionality as ExerciseCard but designed for modal -->
+<!-- ModalExercise.svelte: Bootstrap modal contents, includes ExerciseCard-like functionality for modal display -->
 <script>
   import { setExercise } from "../services/store.js";
   import { onMount } from "svelte";
@@ -7,70 +7,57 @@
     removeFavourite,
     isFavourite,
   } from "../services/favourite.js";
+  // Receive exercise object as a prop
   export let exercise;
 
-  // Fall back image if API does not return an image
-  const fallbackImage = "/images/fallbackImage.png";
 
-  // Needed for favourites functionality
+  // State variables for favourite status and popups
   let isFav = false;
   let showAddedPopup = false;
   let showRemovedPopup = false;
 
-  // Function to set the current exercise in local storage and navigate to display exercise
+  // Set current exercise in local storage and navigate to display page
   const setCurrentExercise = (exercise) => {
     setExercise(exercise);
     window.location.href = "/displayExercise";
   };
 
-  // Function to handle image errors and set fallback image
-  function handleImageError(event) {
-    event.target.src = fallbackImage;
-  }
-
-  // Favourites functionality
+  // Toggle favourite status for this exercise
   const toggleFavourite = (exercise) => {
     isFav = isFavourite(exercise.name);
     if (isFav) {
       removeFavourite(exercise.name);
       showRemovedPopup = true;
-      setTimeout(() => (showRemovedPopup = false), 2000); // Hide popup after 2 seconds
+      setTimeout(() => (showRemovedPopup = false), 2000);
     } else {
       addFavourite(exercise);
       showAddedPopup = true;
-      setTimeout(() => (showAddedPopup = false), 2000); // Hide popup after 2 seconds
+      setTimeout(() => (showAddedPopup = false), 2000);
     }
     isFav = !isFav;
   };
 
-  // On mount, check if exercise is favourite and set isFav accordingly
+  // On mount, check if exercise has been favourited and set isFav accordingly
   onMount(() => {
     if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
       isFav = isFavourite(exercise.name);
     }
   });
 
+  // Update isFav reactively if exercise changes
   $: if (exercise) {
     isFav = isFavourite(exercise.name);
   }
 </script>
 
-<!-- Modal Content: Displays the current exercise -->
+<!-- Modal Content: Displays the current exercise details -->
 <div class="container">
-  <!-- Use fallback image if API does not return an image -->
-  {#if exercise.image}
-    <img
-      src={exercise.image}
-      class="img-fluid custom-rounded img-top"
-      alt={exercise.name}
-      on:error={handleImageError}
-    />{:else}
-    <img
-      src={fallbackImage}
+  <!-- Use exercise image as API does not return an image -->
+  <img
+      src="/images/exerciseImage.png"
       class="img-fluid custom-rounded img-top"
       alt={exercise.name}
     />
-  {/if}
 
   <h5 class="modal-header">{exercise.name}</h5>
   <div class="exercise-details">
@@ -89,10 +76,13 @@
       <span class="detail-info">{exercise.equipment}</span>
     </div>
     <br />
+    <!-- Buttons for viewing and favouriting -->
     <div class="center-content modal-button-container">
+      <!-- View full exercise button -->
       <button class="btn btn-primary" on:click={() => setCurrentExercise(exercise)}>
         View Full Exercise
       </button>
+      <!-- Favourite toggle button -->
       <button class="image-button" on:click={() => toggleFavourite(exercise)}>
         {#if isFav}
           <img
@@ -108,6 +98,7 @@
           />
         {/if}
       </button>
+      <!-- Popup for adding to favourites -->
       {#if showAddedPopup}
         <div class="popup popup-modal">
           Added to favourites <img
@@ -117,6 +108,7 @@
           />
         </div>
       {/if}
+      <!-- Popup for removing from favourites -->
       {#if showRemovedPopup}
         <div class="popup popup-modal">
           Removed from favourites <img
@@ -128,9 +120,7 @@
       {/if}
     </div>
     <div class="sr-detail-item modal-badge-container">
-      {#each exercise.type as type}
-        <span class="badge rounded-pill text-bg-secondary">{type}</span>
-      {/each}
+        <span class="badge rounded-pill text-bg-secondary">{exercise.type}</span>
     </div>
   </div>
 </div>

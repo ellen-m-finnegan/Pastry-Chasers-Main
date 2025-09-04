@@ -1,22 +1,26 @@
-<!-- Search component for search page, user can search by any query and include diet filters -->
+<!-- SearchResult.svelte: Search component for the search page, user can search by muscle name, exercise name, muscle type and include muscle filters -->
 <script>
   import { derived, writable } from "svelte/store";
   import { onMount } from "svelte";
   import { fetchSearchResults } from "../services/fetchSearchResults.js";
   import ExerciseCard from "./ExerciseCard.svelte";
 
+  // Stores for search results,current pages, etc. 
   let searchResults = writable([]);
   let query = writable("");
-  let loading = false;
   let error = writable("");
   let currentPage = writable(1);
-  const resultsPerPage = 9;
   let totalResults = writable(0);
   let selectedType = writable([]);
-  let searchTimeout;
   let searchQuery = writable("");
+  // Loading state for spinner
+  let loading = false;
+  // Number of results per page
+  const resultsPerPage = 9;
+  // Timeout variable for debounce
+  let searchTimeout;
   
-
+  // Derived store for paginated results based on current page
   const paginatedResults = derived(
   [searchResults, currentPage],
   ([$searchResults, $currentPage]) => {
@@ -25,10 +29,10 @@
   }
 );
 
-  // Add 1 second debounce to stop multiple calls to search API before typing is complete
+  // Debounced fetch function for search results
   const debouncedFetchResults = debounce(fetchResults, 1000);
 
-  // Timeout while user is typing to avoid multiple API calls
+  // Debounce function to delay API calls while typing
   function debounce(func, delay) {
     return function (...args) {
       clearTimeout(searchTimeout);
@@ -36,7 +40,7 @@
     };
   }
 
-  // Load the stored query from session storage if it exists
+  // On mount, load stored query from session storage if it exists
   onMount(async () => {
     if (
       typeof window !== "undefined" &&
@@ -51,23 +55,25 @@
     }
   });
 
-  // Reactive statement to fetch results when query changes with debounce to give time for typing
+  // Reactive statement: fetch results when query or filters change, with debounce
   $: if ($query || $selectedType.length > 0) {
   debouncedFetchResults($query, ($currentPage - 1) * resultsPerPage, $selectedType);
 }
-  // Fetch search results from the API
-  async function fetchResults(queryValue, offset, selectedMuscles) {
+
+// Fetch search results from the API and filter by query and muscle
+async function fetchResults(queryValue, selectedMuscles) {
   loading = true;
   error.set("");
   try {
     const params = {};
+    // Add muscle filter if selected
     if (selectedMuscles.length > 0) params.muscle = selectedMuscles.join(",");
     params.limit = 50; // Get more results for client-side filtering
 
     const response = await fetchSearchResults(params);
     let filtered = response;
 
-    // If search bar is not empty, filter by name (partial match)
+    // If search bar is not empty, filter by name or other fields (partial match)
     if (queryValue) {
       const q = queryValue.toLowerCase();
       filtered = response.filter(ex =>
@@ -104,22 +110,24 @@
     }
   }
 
-  // Scroll to top of the page for next and previous
+  // Scroll to top of the page for next and previous page navigation
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Go to next page in pagination
   function handleNextPage() {
     currentPage.update((n) => n + 1);
     scrollToTop();
   }
 
+  // Go to previous page in pagination
   function handlePreviousPage() {
     currentPage.update((n) => (n > 1 ? n - 1 : n));
     scrollToTop();
   }
 
-  // Function to toggle type filters
+  // Toggle muscle filter selection
   function toggleType(type) {
     selectedType.update((types) => {
       if (types.includes(type)) {
@@ -131,8 +139,9 @@
   }
 </script>
 
-<!-- Search results component -->
+<!-- Search results component layout -->
 <div class="container-fluid container-background">
+  <!-- Search form with query input and muscle filters -->
   <form
     class="d-flex flex-column align-items-end"
     id="searchForm"
@@ -149,8 +158,9 @@
       />
       <button class="btn btn-primary" type="submit">Search</button>
     </div>
-    <!-- Filters with checked value depending if selectedType includes value -->
+    <!-- Muscle filter checkboxes -->
     <div id="typeFilter" class="d-flex flex-wrap justify-content-start">
+      <!-- Each checkbox toggles a muscle filter -->
       <div class="form-check form-check-inline">
         <input
           class="form-check-input"
@@ -233,18 +243,18 @@
         {$error}
       </div>
     {:else if $searchResults.length === 0 && !loading}
-      <!-- Show a message when no exercises -->
+      <!-- Show a message when no exercises are found -->
       <div class="alert alert-warning text-center" role="alert">
         No exercises found. Try making a new search.
       </div>
     {:else}
-      <!-- Display exercises with exercise card component -->
+      <!-- Display exercises with ExerciseCard component -->
       <div class="card-group row row-cols-1 row-cols-md-3 g-4">
         {#each $paginatedResults as result}
   <ExerciseCard exercise={result} />
 {/each}
       </div>
-      <!-- Pagination controls -->
+      <!-- Pagination controls for navigating pages -->
       <div
         class="pagination-controls d-flex justify-content-between align-items-center mt-4"
       >
