@@ -62,7 +62,7 @@
     <!-- Use exercise image as API does not have images for exercises -->
     <img
         src="/images/exerciseImage.png"
-        class="card-img-top sr-custom-rounded"
+        class="card-img-top sr-rounded-corners"
         alt={exercise.name}
       />
 
@@ -138,9 +138,7 @@
           {/if}
         </div>
         <div class="sr-detail-item badge-container">
-          {#each exercise.type as type}
-            <span class="badge rounded-pill text-bg-secondary">{type}</span>
-          {/each}
+          <span class="badge rounded-pill text-bg-secondary">{exercise.type}</span>
         </div>
       </div>
     </div>

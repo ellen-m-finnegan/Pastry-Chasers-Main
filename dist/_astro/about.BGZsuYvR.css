@@ -1,21 +1,14 @@
-/* Rounded corners for images and cards */
 .rounded-corners {
   border-radius: 15px;
 }
-
-/* Primary button styling */
 .primary-button {
   background-color: #6d8d98 !important;
   border-color: #6d8d98 !important;
 }
-
-/* Secondary button styling */
 .secondary-button {
-  background-color: #ff4d6d !important;
+  background-color: #ff4d6d important;
   border-color: #ff4d6d !important;
 }
-
-/* Card styling for exercise cards and search results */
 .card {
   background-color: #f8e4b8 !important;
   border: 1px solid hsl(0, 0%, 87%);
@@ -23,89 +16,65 @@
   border-radius: 15px;
   margin: 20px 0;
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px #0000001a;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-
-/* Card hover effects for larger screens */
 @media (min-width: 768px) {
   .card:hover {
-    transform: scale(1.02); /* Slightly enlarge the card on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px #0003;
   }
 }
-
-/* Home page background styling */
 .home-background {
   background-color: #f8e4b8 !important;
   padding: 25px;
   border-radius: 10px;
 }
-
-/* Body background color */
 body {
   background-color: #b5ead7 !important;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
 }
-
-/* styling for hero sections */
 .hero-section {
   background-color: #d19a66 !important;
 }
-
-/* Exercise details layout */
 .exercise-details {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
-
-/* Styling for detail labels and info */
 .detail-name {
-  font-weight: bold;
+  font-weight: 700;
   color: #4b2e1b;
   margin-right: 5px;
 }
 .detail-info {
   color: #343a40;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: Helvetica Neue, Arial, sans-serif;
 }
 .detail-link {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: Helvetica Neue, Arial, sans-serif;
 }
-
-/* Icon styling for details and buttons */
 .detail-icon {
   width: 30px;
   height: 30px;
   vertical-align: middle;
   margin-right: 2px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: Helvetica Neue, Arial, sans-serif;
   padding: 0;
 }
 .detail-icon-original {
   vertical-align: middle;
   margin-right: 2px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: Helvetica Neue, Arial, sans-serif;
   padding: 0;
 }
-
-/* Center content horizontally and vertically */
 .center-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* Card sizing for fixed layouts */
 .fixed-size-card {
   width: 100%;
-  height: auto; /* Adjust the height as needed */
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -118,11 +87,9 @@ body {
 }
 .fixed-size-card .card-image {
   width: 100%;
-  height: 200px; /* Adjust the height as needed */
+  height: 200px;
   object-fit: cover;
 }
-
-/* Pagination controls styling */
 .pagination-controls {
   display: flex;
   justify-content: flex-end;
@@ -132,8 +99,6 @@ body {
 .page-number {
   margin: 0 10px;
 }
-
-/* Muscle group container and image styling */
 .muscleContainer {
   display: flex;
   justify-content: space-between;
@@ -150,8 +115,6 @@ body {
   width: 100%;
   height: auto;
 }
-
-/* Search result card styling */
 .sr-card {
   display: flex;
   flex-direction: row;
@@ -161,14 +124,14 @@ body {
   border: 1px solid hsl(0, 0%, 87%);
   border-color: #d19a66 !important;
   border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px #0000001a;
 }
 .sr-card-image {
   flex: 1;
   margin-right: 20px;
 }
 .sr-card-title {
-  font-weight: bold;
+  font-weight: 700;
   color: #56494c;
   margin-bottom: 10px;
 }
@@ -188,18 +151,16 @@ body {
   margin-right: 5px;
 }
 .sr-detail-name {
-  font-weight: bold;
+  font-weight: 700;
   color: #56494c;
   margin-right: 5px;
 }
 .sr-detail-info {
   color: #343a40;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: Helvetica Neue, Arial, sans-serif;
 }
 .sr-detail-link {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: Helvetica Neue, Arial, sans-serif;
 }
 .sr-toggle-button {
   background-color: #4b2e1b;
@@ -218,14 +179,12 @@ body {
   margin-bottom: 5px;
 }
 .sr-step-number {
-  font-weight: bold;
+  font-weight: 700;
   margin-right: 5px;
 }
 .sr-step-text {
   color: #343a40;
 }
-
-/* Badge containers for exercise types */
 .badge-container {
   gap: 0.5em;
   margin-top: 0.5em;
@@ -235,8 +194,6 @@ body {
   margin-top: 0.5em;
   justify-content: center;
 }
-
-/* Browse page exercise options layout */
 .exercise-options {
   display: flex;
   flex-wrap: wrap;
@@ -244,14 +201,12 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
-/* Exercise option container */
 .exercise-option-container {
   position: relative;
   flex: 1 1 calc(33.33% - 20px);
   max-width: 300px;
   box-sizing: border-box;
 }
-/* Exercise option image styling */
 .exercise-option {
   cursor: pointer;
   width: 100%;
@@ -259,57 +214,42 @@ body {
   object-fit: cover;
   border-radius: 10px;
 }
-
-/* Adjust for medium screens (2 columns) */
 @media (min-width: 768px) {
   .exercise-option-container {
-    flex: 1 1 calc(50% - 20px); /* 2 columns */
+    flex: 1 1 calc(50% - 20px);
   }
 }
-
-/* Adjust for large screens (3 columns) */
 @media (min-width: 1024px) {
   .exercise-option-container {
-    flex: 1 1 calc(33.33% - 20px); /* 3 columns */
+    flex: 1 1 calc(33.33% - 20px);
   }
 }
-
-/* Overlay text for exercise option images */
 .overlay-text {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(75, 46, 27, 0.6);
-  color: #ffffff;
+  background-color: #4b2e1b99;
+  color: #fff;
   text-align: center;
   padding: 5px 0;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-
-/* Container background for sections */
 .container-background {
   background-color: #d19a66;
   padding: 25px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
-
-/* Modal styling for exercise details */
 .modal-background {
   background-color: #d19a66;
   padding: 20px;
 }
-.modal-header {
-  color: #56494c;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}
+.modal-header,
 .modal-body {
   color: #56494c;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: Helvetica Neue, Arial, sans-serif;
 }
 .modal-backdrop {
   position: fixed;
@@ -317,31 +257,19 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #00000080;
   z-index: 1040;
 }
-
-/* Button styling for image buttons */
 .image-button {
   border: none;
   background: none;
   padding: 0;
   cursor: pointer;
 }
-
-/* Instructions page container */
 .instructions-page-container {
   padding: 20px;
 }
-
-/* Title and button container for page headers */
-.title-button-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Button container for card and modal actions */
+.title-button-container,
 .button-container {
   display: flex;
   align-items: center;
@@ -352,8 +280,6 @@ body {
   align-items: center;
   justify-content: space-evenly;
 }
-
-/* Popup styling for feedback messages */
 .popup {
   position: absolute;
   right: 0;
@@ -361,7 +287,7 @@ body {
   color: #f8f4f3;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px #0000001a;
   animation: fadeInOut 2s;
   white-space: nowrap;
 }
@@ -374,8 +300,6 @@ body {
 .popup-card {
   top: 65%;
 }
-
-/* Section styling for about page and story */
 .intro,
 .story,
 .development,
@@ -385,12 +309,12 @@ body {
 }
 .call-to-action {
   background-color: #ff4d6d;
-  color: #ffffff;
+  color: #fff;
   padding: 1rem;
   border-radius: 0.5rem;
 }
 .call-to-action a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: underline;
 }
 .story-with-image {
@@ -413,8 +337,6 @@ body {
   max-width: 100%;
   height: auto;
 }
-
-/* Contact form styling */
 .contact-form {
   padding: 20px;
   border: 1px solid #f4f2f2;
@@ -422,7 +344,7 @@ body {
   background: #f8e4b8;
 }
 .form-group label {
-  font-weight: bold;
+  font-weight: 700;
 }
 .form-response {
   margin-top: 10px;
@@ -434,16 +356,12 @@ body {
 .form-response.error {
   color: red;
 }
-
-/* Secondary background color for headings */
 .bg-secondary {
   background-color: #ff4d6d !important;
   border-color: #ff4d6d !important;
-  color: #ffffff !important;
+  color: #fff !important;
   padding: 1rem;
 }
-
-/* Development journey section styling */
 .development-journey h2,
 .development-journey h5 {
   margin-bottom: 15px;
@@ -455,15 +373,13 @@ body {
 .flex-grow-1 {
   flex-grow: 1;
 }
-
-/* Back to top button styling */
 .btn-back-to-top {
   display: none;
   position: fixed;
   bottom: 40px;
   right: 40px;
   z-index: 99;
-  background-color: #ffffff;
+  background-color: #fff;
   color: #ff4d6d;
   border: none;
   border-radius: 50%;
@@ -474,11 +390,9 @@ body {
   align-items: center;
 }
 .btn-back-to-top img {
-  width: 24px; /* Adjust size as needed */
-  height: 24px; /* Adjust size as needed */
+  width: 24px;
+  height: 24px;
 }
-
-/* Animation for popups */
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -489,12 +403,10 @@ body {
   90% {
     opacity: 1;
   }
-  100% {
+  to {
     opacity: 0;
   }
 }
-
-/* Instruction step styling for exercise instructions */
 .instruction-step {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -504,7 +416,7 @@ body {
 }
 .step-number {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #3b82f6;
   margin-bottom: 0.5rem;
 }
@@ -512,10 +424,4 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: #333;
-}
-
-/* Font for header styling */
-.header-title {
-  font-family: "Modak", cursive;
-  font-weight: 400;
 }

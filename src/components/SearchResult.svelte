@@ -156,7 +156,7 @@ async function fetchResults(queryValue, selectedMuscles) {
         placeholder="Search exercises..."
         bind:value={$query}
       />
-      <button class="btn btn-primary" type="submit">Search</button>
+      <button class="btn primary-button" type="submit">Search</button>
     </div>
     <!-- Muscle filter checkboxes -->
     <div id="typeFilter" class="d-flex flex-wrap justify-content-start">
@@ -259,7 +259,7 @@ async function fetchResults(queryValue, selectedMuscles) {
         class="pagination-controls d-flex justify-content-between align-items-center mt-4"
       >
         <button
-          class="btn btn-primary"
+          class="btn primary-button"
           on:click={handlePreviousPage}
           disabled={$currentPage === 1}
         >
@@ -269,7 +269,7 @@ async function fetchResults(queryValue, selectedMuscles) {
           Page {$currentPage} of {Math.ceil($totalResults / resultsPerPage)}
         </span>
         <button
-          class="btn btn-primary"
+          class="btn primary-button"
           on:click={handleNextPage}
           disabled={$currentPage === Math.ceil($totalResults / resultsPerPage)}
         >

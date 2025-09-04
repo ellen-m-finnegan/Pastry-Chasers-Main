@@ -31,13 +31,13 @@ const exercises = await getExercises(params);
         <div class="col-md-6">
           <img
             src={imageUrl}
-            class="img-fluid custom-rounded"
+            class="img-fluid rounded-corners"
             alt="Descriptive Alt Text"
           />
         </div>
         <!-- Right column: welcome message and random exercise button -->
         <div class="col-md-6">
-          <div class="jumbotron p-5 custom-rounded bg-light shadow">
+          <div class="hero-section p-5 rounded-corners bg-light shadow">
             <h1 class="display-4 text-center mb-2">Welcome to Pastry Chasers</h1>
             <div
               class="text-center mt-2 mb-4 d-flex justify-content-center align-items-center"
@@ -69,7 +69,7 @@ const exercises = await getExercises(params);
       <div class="title-button-container">
         <h2 class="display-4">Popular Exercises</h2>
         <!-- Button to browse all exercises -->
-        <a href="/browse" class="btn btn-secondary btn-lg"
+        <a href="/browse" class="btn secondary-button btn-lg"
           >See All Exercises</a
         >
       </div>
