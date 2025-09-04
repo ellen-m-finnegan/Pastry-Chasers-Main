@@ -1,0 +1,32 @@
+---
+title: "Exercises";
+description: "Browse exercise results based on muscle groups and type.";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExercisePagination from "../components/ExercisePagination.svelte";
+import BackToTopButton from "../components/BackToTop.astro";
+
+// Number of exercises to show per page
+const exercisesPerPage = 9;
+// Current page for pagination
+let currentPage = 1;
+---
+
+<!-- Main layout for the exercises page -->
+<BaseLayout>
+  <div slot="main" class="container mt-5">
+    <!-- Title and image section -->
+    <div class="title-button-container">
+      <h1 class="display-4">Browse Exercises</h1>
+      <img src="/images/running-croissant2.png" alt="running croissant" />
+    </div>
+    <!-- Pagination component for exercises -->
+    <ExercisePagination
+      client:only="svelte"
+      exercisesPerPage={exercisesPerPage}
+      currentPage={currentPage}
+    />
+    <!-- Back to top button -->
+    <BackToTopButton />
+  </div>
+</BaseLayout>

@@ -180,7 +180,7 @@
       </div>
     </div>
   {:else}
-    <!-- ack if no exercise found -->
+    <!-- Fallback if no exercise found -->
     <div class="container">
       <p>Exercise not found.</p>
     </div>
