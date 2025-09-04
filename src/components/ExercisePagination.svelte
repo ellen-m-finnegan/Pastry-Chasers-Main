@@ -204,13 +204,13 @@
     </h4>
     <!--Option to refresh exercises using boolean, to get new set of results if user unhappy-->
     <div class="button-container d-flex">
-      <button class="btn btn-secondary me-2" on:click={() => fetchExercises(true)}
+      <button class="btn secondary-button me-2" on:click={() => fetchExercises(true)}
         >Refresh Exercises</button
       >
       <!-- Bootstrap dropdown menu with checkbox to change selected options -->
       <div class="dropdown">
         <button
-          class="btn btn-secondary dropdown-toggle"
+          class="btn secondary-button dropdown-toggle"
           type="button"
           id="dropdownMenuButton"
           data-bs-toggle="dropdown"
@@ -265,13 +265,13 @@
     class="pagination-controls d-flex justify-content-between align-items-center mt-4"
   >
     <button
-      class="btn btn-primary"
+      class="btn primary-button"
       on:click={prevPage}
       disabled={currentPage === 1}>Previous</button
     >
     <span class="page-number">Page {currentPage}</span>
     <button
-      class="btn btn-primary"
+      class="btn primary-button"
       on:click={nextPage}
       disabled={currentPage ===
         Math.ceil(allExercises.exercises.length / exercisesPerPage)}>Next</button

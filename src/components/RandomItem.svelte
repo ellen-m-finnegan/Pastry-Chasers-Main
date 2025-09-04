@@ -41,7 +41,7 @@
 
 <!-- Button to fetch random exercises and open modal -->
 <div class="center-content">
-  <button class="btn btn-primary btn-lg" on:click={fetchRandomExercises}>
+  <button class="btn primary-button btn-lg" on:click={fetchRandomExercises}>
     Get Random Exercise
   </button>
 </div>
@@ -68,9 +68,9 @@
         </div>
         <!-- Modal footer with close and roll again buttons -->
         <div class="modal-footer modal-background">
-          <button class="btn btn-primary" on:click={closeModal}> Close </button>
+          <button class="btn primary-button" on:click={closeModal}> Close </button>
           <!-- Roll again option to get next exercise -->
-          <button class="btn btn-primary" on:click={nextExercise}>
+          <button class="btn primary-button" on:click={nextExercise}>
             Roll Again <img
               src="/images/dice.png"
               alt="dice"

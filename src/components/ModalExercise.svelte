@@ -55,7 +55,7 @@
   <!-- Use exercise image as API does not return an image -->
   <img
       src="/images/exerciseImage.png"
-      class="img-fluid custom-rounded img-top"
+      class="img-fluid rounded-corners img-top"
       alt={exercise.name}
     />
 
@@ -79,7 +79,7 @@
     <!-- Buttons for viewing and favouriting -->
     <div class="center-content modal-button-container">
       <!-- View full exercise button -->
-      <button class="btn btn-primary" on:click={() => setCurrentExercise(exercise)}>
+      <button class="btn primary-button" on:click={() => setCurrentExercise(exercise)}>
         View Full Exercise
       </button>
       <!-- Favourite toggle button -->
