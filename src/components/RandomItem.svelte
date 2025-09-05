@@ -14,8 +14,8 @@
   // Fetch random exercises from API and show modal
   async function fetchRandomExercises() {
     const params = {
-      type: ["strength", "cardio"], // Only fetch strength and cardio exercises
-      limit: 50,                    // Limit to 50 exercises
+      type: "strength", // Only fetch strength exercises
+      limit: 50,       // Limit to 50 exercises
     };
     const data = await getExercises(params);
     exercises.set(Array.isArray(data) ? data : []);
