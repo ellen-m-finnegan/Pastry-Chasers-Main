@@ -54,3 +54,20 @@ title: "Header"
         </div>
     </nav>
 </header>
+<script>
+    // Ensure this code runs only in the browser
+    if (typeof window !== 'undefined') {
+        // Get the search form element by its ID
+        const form = document.getElementById('searchForm');
+        // Add a submit event listener to the form
+        form?.addEventListener('submit', function(e) { // Prevent default form submission
+            // Get the trimmed value from the search input
+            e.preventDefault();
+            const query = (document.getElementById('searchQuery') as HTMLInputElement)?.value.trim();
+            // If query is not empty, redirect to the search results page with the query as a URL parameter
+            if (query) {
+                window.location.href = `/searchResults?query=${encodeURIComponent(query)}`;
+            }
+        });
+    }
+</script>
