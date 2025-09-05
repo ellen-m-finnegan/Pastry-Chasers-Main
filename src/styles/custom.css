@@ -7,12 +7,14 @@
 .primary-button {
   background-color: #6d8d98 !important;
   border-color: #6d8d98 !important;
+  color: #ffffff !important;
 }
 
 /* Secondary button styling */
 .secondary-button {
   background-color: #ff4d6d !important;
   border-color: #ff4d6d !important;
+  color: #ffffff !important;
 }
 
 /* Card styling for exercise cards and search results */
