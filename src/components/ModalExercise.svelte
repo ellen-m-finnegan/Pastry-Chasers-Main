@@ -19,7 +19,7 @@
   // Set current exercise in local storage and navigate to display page
   const setCurrentExercise = (exercise) => {
     setExercise(exercise);
-    window.location.href = "./displayExercise";
+    window.location.href = "/Pastry-Chasers-Main/displayExercise";
   };
 
   // Toggle favourite status for this exercise
@@ -62,13 +62,13 @@
   <h5 class="modal-header">{exercise.name}</h5>
   <div class="exercise-details">
     <div class="detail-item">
-      <img src="./images/difficulty-icon.png" alt="Difficulty" class="detail-icon" />
+      <img src="/Pastry-Chasers-Main/images/difficulty-icon.png" alt="Difficulty" class="detail-icon" />
       <span class="detail-name">Difficulty:</span>
       <span class="detail-info">{exercise.difficulty}</span>
     </div>
     <div class="detail-item">
       <img
-        src="./images/equipment-icon.png"
+        src="/Pastry-Chasers-Main/images/equipment-icon.png"
         alt="Equipment"
         class="detail-icon"
       />
@@ -86,13 +86,13 @@
       <button class="image-button" on:click={() => toggleFavourite(exercise)}>
         {#if isFav}
           <img
-            src="./images/favouritedButton.png"
+            src="/Pastry-Chasers-Main/images/favouritedButton.png"
             alt="favourited"
             class="detail-icon"
           />
         {:else}
           <img
-            src="./images/favouriteButton.png"
+            src="/Pastry-Chasers-Main/images/favouriteButton.png"
             alt="favourite"
             class="detail-icon"
           />
@@ -102,7 +102,7 @@
       {#if showAddedPopup}
         <div class="popup popup-modal">
           Added to favourites <img
-            src="./images/happyIcon.png"
+            src="/Pastry-Chasers-Main/images/happyIcon.png"
             alt="smiley face"
             class="detail-icon"
           />
@@ -112,7 +112,7 @@
       {#if showRemovedPopup}
         <div class="popup popup-modal">
           Removed from favourites <img
-            src="./images/sadIcon.png"
+            src="/Pastry-Chasers-Main/images/sadIcon.png"
             alt="sad face"
             class="detail-icon"
           />

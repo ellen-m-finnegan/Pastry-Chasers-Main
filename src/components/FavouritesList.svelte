@@ -22,7 +22,7 @@
     <div class="title-button-container">
       <h1 class="display-4">Favourite Exercises</h1>
       <img
-        src="./images/running-croissant2.png"
+        src="/Pastry-Chasers-Main/images/running-croissant2.png"
         alt="running croissant"
       />
     </div>

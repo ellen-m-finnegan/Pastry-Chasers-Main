@@ -4,9 +4,9 @@ title: "Header"
 
 <header style="background-color: #F8E4B8;">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <a class="navbar-brand ms-2 header-title" href="/">
+        <a class="navbar-brand ms-2 header-title" href="/Pastry-Chasers-Main/">
         Pastry Chasers <img 
-            src="./images/running-croissant.png"
+            src="/Pastry-Chasers-Main/images/running-croissant.png"
             alt="pastry icon"
             class="detail-icon" 
             />
@@ -26,19 +26,19 @@ title: "Header"
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/Pastry-Chasers-Main/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./browse">Browse Exercises</a>
+                    <a class="nav-link" href="/Pastry-Chasers-Main/browse">Browse Exercises</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../searchResults">Search for Exercises</a>
+                    <a class="nav-link" href="/Pastry-Chasers-Main/searchResults">Search for Exercises</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./favourites">My Favourites</a>
+                    <a class="nav-link" href="/Pastry-Chasers-Main/favourites">My Favourites</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./about">About Pastry Chasers</a>
+                    <a class="nav-link" href="/Pastry-Chasers-Main/about">About Pastry Chasers</a>
                 </li>
             </ul>
              <form class="d-flex ms-auto" id="searchForm">
@@ -66,7 +66,7 @@ title: "Header"
             const query = (document.getElementById('searchQuery') as HTMLInputElement)?.value.trim();
             // If query is not empty, redirect to the search results page with the query as a URL parameter
             if (query) {
-                window.location.href = `/searchResults?query=${encodeURIComponent(query)}`;
+                window.location.href = `/Pastry-Chasers-Main/searchResults?query=${encodeURIComponent(query)}`;
             }
         });
     }
