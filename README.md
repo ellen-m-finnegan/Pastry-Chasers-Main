@@ -47,9 +47,12 @@ public/
    npm run build
    ```
 4. **Preview production build:**
+
    ```bash
    npm run preview
    ```
+
+   This will bring you to http://localhost:4321/Pastry-Chasers-Main/
 
 ## Visit Hosted GitHub Pages Site
 
