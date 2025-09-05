@@ -55,7 +55,7 @@ public/
 
 You can find the live version of the site here:
 
-[**Pastry Chasers**](https://ellen-m-finnegan.github.io/)
+[**Pastry Chasers**](https://ellen-m-finnegan.github.io/Pastry-Chasers-Main/)
 
 ## Svelte Integration
 

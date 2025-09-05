@@ -9,7 +9,7 @@ import ExerciseCard from "../components/ExerciseCard.svelte";
 import BackToTop from "../components/BackToTop.astro";
 
 // Set logo image URL
-const imageUrl = "/images/logo.png";
+const imageUrl = "./images/logo.png";
 
 // Parameters for fetching popular exercises
 const params = {
@@ -44,7 +44,7 @@ const exercises = await getExercises(params);
             >
               <span class="lead">Get Motivated! </span>
               <img
-                src="/images/motivation-icon.png"
+                src="./images/motivation-icon.png"
                 alt="Motivation Icon"
                 class="detail-icon-original ms-2"
               />
@@ -69,7 +69,7 @@ const exercises = await getExercises(params);
       <div class="title-button-container">
         <h2 class="display-4">Popular Exercises</h2>
         <!-- Button to browse all exercises -->
-        <a href="/browse" class="btn secondary-button btn-lg"
+        <a href="./browse" class="btn secondary-button btn-lg"
           >See All Exercises</a
         >
       </div>
