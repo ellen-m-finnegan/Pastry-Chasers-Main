@@ -73,13 +73,13 @@
             <button class="image-button" on:click={toggleFavourite}>
               {#if isFav}
                 <img
-                  src="/images/favouritedButton.png"
+                  src="./images/favouritedButton.png"
                   alt="favourited"
                   class="detail-icon"
                 />
               {:else}
                 <img
-                  src="/images/favouriteButton.png"
+                  src="./images/favouriteButton.png"
                   alt="favourite"
                   class="detail-icon"
                 />
@@ -89,7 +89,7 @@
             {#if showAddedPopup}
               <div class="popup popup-display">
                 Added to favourites <img
-                  src="/images/happyIcon.png"
+                  src="./images/happyIcon.png"
                   alt="smiley face"
                   class="detail-icon"
                 />
@@ -99,7 +99,7 @@
             {#if showRemovedPopup}
               <div class="popup popup-display">
                 Removed from favourites <img
-                  src="/images/sadIcon.png"
+                  src="./images/sadIcon.png"
                   alt="sad face"
                   class="detail-icon"
                 />

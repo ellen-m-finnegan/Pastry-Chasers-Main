@@ -72,7 +72,7 @@
           <!-- Roll again option to get next exercise -->
           <button class="btn primary-button" on:click={nextExercise}>
             Roll Again <img
-              src="/images/dice.png"
+              src="./images/dice.png"
               alt="dice"
               class="detail-icon"
             />
