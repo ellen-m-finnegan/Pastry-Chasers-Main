@@ -23,7 +23,7 @@ import Footer from '../components/Footer.astro';
       rel="stylesheet"
     />
     <!-- Site favicon -->
-    <link rel="icon" type="image/x-icon" href="./images/running-croissant.png" />
+    <link rel="icon" type="image/x-icon" href="/Pastry-Chasers-Main/images/running-croissant.png" />
   </head>
   <body>
     <!-- Site header/navigation -->
@@ -50,7 +50,7 @@ import Footer from '../components/Footer.astro';
           if (query) {
             // Store the query in sessionStorage and redirect to results page
             sessionStorage.setItem("searchQuery", query);
-            window.location.href = "/searchResults";
+            window.location.href = "/Pastry-Chasers-Main/searchResults"; 
           }
         });
       }

@@ -12,7 +12,7 @@
   // Set current exercise in local storage and navigate to display exercise
   const setCurrentExercise = (exercise) => {
     setExercise(exercise);
-    window.location.href = "./displayExercise";
+    window.location.href = "/Pastry-Chasers-Main/displayExercise";
   };
 
   // Favourites functionality
@@ -35,7 +35,7 @@
   };
 
   function handleImageError(event) {
-    event.target.src = "./images/exercicseImage.png";
+    event.target.src = "/Pastry-Chasers-Main/images/exercicseImage.png";
   }
 
   // On mount, check if exercise is favourite and set isFav accordingly
@@ -61,7 +61,7 @@
   <div class="card">
     <!-- Use exercise image as API does not have images for exercises -->
     <img
-        src="./images/exerciseImage.png"
+        src="/Pastry-Chasers-Main/images/exerciseImage.png"
         class="card-img-top sr-rounded-corners"
         alt={exercise.name}
       />
@@ -71,7 +71,7 @@
       <div class="sr-exercise-details">
         <div class="sr-detail-item">
           <img
-            src="./images/difficulty-icon.png"
+            src="/Pastry-Chasers-Main/images/difficulty-icon.png"
             alt="Difficulty"
             class="sr-detail-icon"
           />
@@ -80,7 +80,7 @@
         </div>
         <div class="sr-detail-item">
           <img
-            src="./images/equipment-icon.png"
+            src="/Pastry-Chasers-Main/images/equipment-icon.png"
             alt="Equipment"
             class="sr-detail-icon"
           />
@@ -89,7 +89,7 @@
         </div>
          <div class="sr-detail-item">
           <img
-            src="./images/muscle-icon.png"
+            src="/Pastry-Chasers-Main/images/muscle-icon.png"
             alt="Muscle"
             class="sr-detail-icon"
           />
@@ -106,13 +106,13 @@
           <button class="image-button" on:click={toggleFavourite(exercise)}>
             {#if isFav}
               <img
-                src="./images/favouritedButton.png"
+                src="/Pastry-Chasers-Main/images/favouritedButton.png"
                 alt="favourited"
                 class="detail-icon"
               />
             {:else}
               <img
-                src="./images/favouriteButton.png"
+                src="/Pastry-Chasers-Main/images/favouriteButton.png"
                 alt="favourite"
                 class="detail-icon"
               />
@@ -121,7 +121,7 @@
           {#if showAddedPopup}
             <div class="popup popup-card">
               Added to favourites <img
-                src="./images/happyIcon.png"
+                src="/Pastry-Chasers-Main/images/happyIcon.png"
                 alt="smiley face"
                 class="detail-icon"
               />
@@ -130,7 +130,7 @@
           {#if showRemovedPopup}
             <div class="popup popup-card">
               Removed from favourites <img
-                src="./images/sadIcon.png"
+                src="/Pastry-Chasers-Main/images/sadIcon.png"
                 alt="sad face"
                 class="detail-icon"
               />
