@@ -1,13 +1,15 @@
 {
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "npx astro dev",
+    "build": "npx astro build",
+    "preview": "npx astro preview"
   },
   "dependencies": {
     "@astrojs/svelte": "^7.1.0",
-    "astro": "^5.13.3",
     "svelte": "^5.38.6",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "astro": "^5.13.5"
   }
 }
