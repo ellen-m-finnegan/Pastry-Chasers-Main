@@ -48,13 +48,23 @@
   $: if (exercise) {
     isFav = isFavourite(exercise.name);
   }
+
+    // Function to remove underscore
+  function formatUnderscore(str) {
+    return str ? str.replace(/_/g, " ") : "";
+  }
+
+    // Function to capitalize the first letter
+  const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
 </script>
 
 <!-- Modal Content: Displays the current exercise details -->
 <div class="container">
   <!-- Use exercise image as API does not return an image -->
   <img
-      src="./images/exerciseImage.png"
+      src="/Pastry-Chasers-Main/images/exerciseImage.png"
       class="img-fluid rounded-corners img-top"
       alt={exercise.name}
     />
@@ -62,9 +72,13 @@
   <h5 class="modal-header">{exercise.name}</h5>
   <div class="exercise-details">
     <div class="detail-item">
-      <img src="/Pastry-Chasers-Main/images/difficulty-icon.png" alt="Difficulty" class="detail-icon" />
+      <img 
+        src="/Pastry-Chasers-Main/images/difficulty-icon.png" 
+        alt="Difficulty" 
+        class="detail-icon" 
+      />
       <span class="detail-name">Difficulty:</span>
-      <span class="detail-info">{exercise.difficulty}</span>
+      <span class="detail-info">{capitalizeFirstLetter(exercise.difficulty)}</span>
     </div>
     <div class="detail-item">
       <img
@@ -73,7 +87,16 @@
         class="detail-icon"
       />
       <span class="detail-name">Equipment:</span>
-      <span class="detail-info">{exercise.equipment}</span>
+      <span class="detail-info">{capitalizeFirstLetter(formatUnderscore(exercise.equipment))}</span>
+    </div>
+    <div class="detail-item">
+          <img
+            src="/Pastry-Chasers-Main/images/muscle-icon.png"
+            alt="Muscle"
+            class="detail-icon"
+          />
+          <span class="detail-name">Muscle:</span>
+          <span class="detail-info">{capitalizeFirstLetter(formatUnderscore(exercise.muscle))}</span>
     </div>
     <br />
     <!-- Buttons for viewing and favouriting -->
