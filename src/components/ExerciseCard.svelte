@@ -98,7 +98,7 @@
         </div>
         <div class="action-bar">
           <button
-            class="btn btn-primary"
+            class="btn primary-button"
             on:click={() => setCurrentExercise(exercise)}
           >
             View Full Exercise
