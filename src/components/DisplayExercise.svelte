@@ -63,7 +63,7 @@
 <main>
   <!-- Display the exercise if it exists -->
   {#if $exercise}
-    <div class="container container-background">
+    <div class="container section-background">
       <!-- Header row: exercise name and favourite button -->
       <div class="row mb-4">
         <div class="col-12 d-flex justify-content-between align-items-center">
@@ -159,7 +159,7 @@
       <!-- Instructions section -->
       <div class="row">
         <div class="col-12">
-          <div class="bg-light p-3 rounded container-background">
+          <div class="bg-light p-3 rounded section-background">
             <h3
               class="bg-secondary text-white px-2 py-1 rounded"
               style="display: inline-block;"
@@ -170,7 +170,7 @@
             <div class="list-group">
               {#each instructionSteps as step, i}
                 <div class="list-group-item instruction-step">
-                  <h5 class="step-number">Step {i + 1}</h5>
+                  <h2 class="step-number">Step {i + 1}</h2>
                   <p class="step-text">{step}.</p>
                 </div>
               {/each}

@@ -87,6 +87,11 @@ I used Github to handle my contributions
 
 Accessibility and Lighthouse reports are available to view in the `docs` folder.
 
+## Notes
+
+- The exercise API from [API Ninjas](https://www.api-ninjas.com/api/exercises) can occasionally be down for free users, it does go back up very quickly, so if you experience any issues check out their page
+- The search function only works with complete exercise name matches due to the API e.g. landmine twist or clean and press and not landmine or clean.
+
 ## Credits
 
 - Logo designed by Ellen Finnegan

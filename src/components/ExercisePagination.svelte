@@ -194,8 +194,8 @@
 </script>
 
 <!--HTML code for the ExercisePagination component-->
-<div class="container-fluid container-background">
-  <div class="title-button-container">
+<div class="container-fluid section-background">
+  <div class="header-title-actionsr">
     <h4
       class="bg-secondary text-white px-2 py-1 rounded"
       style="display: inline-block;"
@@ -203,7 +203,7 @@
       {selectedOptions.map(capitalizeFirstLetter).join(", ")}
     </h4>
     <!--Option to refresh exercises using boolean, to get new set of results if user unhappy-->
-    <div class="button-container d-flex">
+    <div class="action-bar d-flex">
       <button class="btn secondary-button me-2" on:click={() => fetchExercises(true)}
         >Refresh Exercises</button
       >

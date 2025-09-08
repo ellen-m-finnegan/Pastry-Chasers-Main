@@ -140,7 +140,7 @@ async function fetchResults(queryValue, selectedMuscles) {
 </script>
 
 <!-- Search results component layout -->
-<div class="container-fluid container-background">
+<div class="container-fluid section-background">
   <!-- Search form with query input and muscle filters -->
   <form
     class="d-flex flex-column align-items-end"
