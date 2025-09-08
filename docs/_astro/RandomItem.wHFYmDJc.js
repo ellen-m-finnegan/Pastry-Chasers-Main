@@ -1,1 +1,253 @@
-import{o as oa,b as S,i as ea,a as B,r as na,d as la,s as ca,c as K,w as N,e as da}from"./favourite.D8urFDSY.js";import{c as sa,s as d,m as O,l as va,X as p,a as ua,f as u,d as s,e as i,r as t,g as R,t as ma,u as M,h as q,i as w,b as v,p as ta,Y as aa,Z as pa}from"./render.BE2Fuemi.js";import{g as fa}from"./exerciseService.hgv8slgW.js";import{p as ga,s as _a,a as ba}from"./store.BkX6ANw_.js";var ha=u('<img src="/Pastry-Chasers-Main/images/favouritedButton.png" alt="favourited" class="detail-icon"/>'),ya=u('<img src="/Pastry-Chasers-Main/images/favouriteButton.png" alt="favourite" class="detail-icon"/>'),xa=u('<div class="popup popup-modal">Added to favourites <img src="/Pastry-Chasers-Main/images/happyIcon.png" alt="smiley face" class="detail-icon"/></div>'),Ma=u('<div class="popup popup-modal">Removed from favourites <img src="/Pastry-Chasers-Main/images/sadIcon.png" alt="sad face" class="detail-icon"/></div>'),wa=u('<div class="container"><img src="/Pastry-Chasers-Main/images/exerciseImage.png" class="img-fluid rounded-corners img-top"/> <h2 class="modal-header"> </h2> <div class="exercise-details"><div class="detail-item"><img src="/Pastry-Chasers-Main/images/difficulty-icon.png" alt="Difficulty" class="detail-icon"/> <span class="detail-name">Difficulty:</span> <span class="detail-info"> </span></div> <div class="detail-item"><img src="/Pastry-Chasers-Main/images/equipment-icon.png" alt="Equipment" class="detail-icon"/> <span class="detail-name">Equipment:</span> <span class="detail-info"> </span></div> <div class="detail-item"><img src="/Pastry-Chasers-Main/images/muscle-icon.png" alt="Muscle" class="detail-icon"/> <span class="detail-name">Muscle:</span> <span class="detail-info"> </span></div> <br/> <div class="center-content modal-action-bar"><button class="btn primary-button">View Full Exercise</button> <button class="image-button"><!></button> <!> <!></div> <div class="sr-detail-item modal-badge-container"><span class="badge rounded-pill text-bg-secondary"> </span></div></div></div>');function Ea(V,D){sa(D,!1);let e=ga(D,"exercise",8),n=O(!1),E=O(!1),f=O(!1);const X=a=>{ba(a),window.location.href="/Pastry-Chasers-Main/displayExercise"},k=a=>{d(n,S(a.name)),R(n)?(na(a.name),d(f,!0),setTimeout(()=>d(f,!1),2e3)):(la(a),d(E,!0),setTimeout(()=>d(E,!1),2e3)),d(n,!R(n))};oa(()=>{typeof window<"u"&&typeof localStorage<"u"&&d(n,S(e().name))});function g(a){return a?a.replace(/_/g," "):""}const m=a=>a.charAt(0).toUpperCase()+a.slice(1);va(()=>(p(e()),S),()=>{e()&&d(n,S(e().name))}),ua(),ea();var C=wa(),L=s(C),_=i(L,2),T=s(_,!0);t(_);var b=i(_,2),P=s(b),U=i(s(P),4),Y=s(U,!0);t(U),t(P);var r=i(P,2),o=i(s(r),4),z=s(o,!0);t(o),t(r);var h=i(r,2),$=i(s(h),4),A=s($,!0);t($),t(h);var F=i(h,4),y=s(F),x=i(y,2),Z=s(x);{var j=a=>{var l=ha();v(a,l)},G=a=>{var l=ya();v(a,l)};B(Z,a=>{R(n)?a(j):a(G,!1)})}t(x);var I=i(x,2);{var H=a=>{var l=xa();v(a,l)};B(I,a=>{R(E)&&a(H)})}var c=i(I,2);{var J=a=>{var l=Ma();v(a,l)};B(c,a=>{R(f)&&a(J)})}t(F);var Q=i(F,2),W=s(Q),ia=s(W,!0);t(W),t(Q),t(b),t(C),ma((a,l,ra)=>{_a(L,"alt",(p(e()),M(()=>e().name))),q(T,(p(e()),M(()=>e().name))),q(Y,a),q(z,l),q(A,ra),q(ia,(p(e()),M(()=>e().type)))},[()=>(p(e()),M(()=>m(e().difficulty))),()=>(p(e()),M(()=>m(g(e().equipment)))),()=>(p(e()),M(()=>m(g(e().muscle))))]),w("click",y,()=>X(e())),w("click",x,()=>k(e())),v(V,C),ta()}var ka=u("<p>Loading...</p>"),Ca=u('<div class="modal fade show" tabindex="-1" style="display: block;"><div class="modal-dialog"><div class="modal-content"><div class="modal-header modal-background"><button type="button" class="btn-close"></button></div> <div class="modal-body modal-body"><!></div> <div class="modal-footer modal-background"><button class="btn primary-button">Close</button> <button class="btn primary-button">Roll Again <img src="/Pastry-Chasers-Main/images/dice.png" alt="dice" class="detail-icon"/></button></div></div></div></div> <div class="modal-backdrop fade show"></div>',1),Pa=u('<div class="center-content"><button class="btn primary-button btn-lg">Get Random Exercise</button></div> <!>',1);function Ra(V,D){sa(D,!1);const[e,n]=ca(),E=()=>K(m,"$showModal",e),f=()=>K(k,"$exercises",e),X=()=>K(g,"$currentExerciseIndex",e);let k=N([]),g=N(0),m=N(!1);async function C(){const o=await fa({type:"strength",limit:50});k.set(Array.isArray(o)?o:[]),g.set(0),m.set(!0)}function L(){const r=da(k);g.update(o=>(console.log("Roll Again clicked",o,r.length),r.length>0?(o+1)%r.length:0))}function _(){m.set(!1)}ea();var T=Pa(),b=aa(T),P=s(b);t(b);var U=i(b,2);{var Y=r=>{var o=Ca(),z=aa(o),h=s(z),$=s(h),A=s($),F=s(A);t(A);var y=i(A,2),x=s(y);{var Z=c=>{Ea(c,{get exercise(){return f()[X()]}})},j=c=>{var J=ka();v(c,J)};B(x,c=>{f().length>0?c(Z):c(j,!1)})}t(y);var G=i(y,2),I=s(G),H=i(I,2);t(G),t($),t(h),t(z),pa(2),w("click",F,_),w("click",I,_),w("click",H,L),v(r,o)};B(U,r=>{E()&&r(Y)})}w("click",P,C),v(V,T),ta(),n()}export{Ra as default};
+import {
+  o as oa,
+  b as S,
+  i as ea,
+  a as B,
+  r as na,
+  d as la,
+  s as ca,
+  c as K,
+  w as N,
+  e as da,
+} from "./favourite.D8urFDSY.js";
+import {
+  c as sa,
+  s as d,
+  m as O,
+  l as va,
+  X as p,
+  a as ua,
+  f as u,
+  d as s,
+  e as i,
+  r as t,
+  g as R,
+  t as ma,
+  u as M,
+  h as q,
+  i as w,
+  b as v,
+  p as ta,
+  Y as aa,
+  Z as pa,
+} from "./render.BE2Fuemi.js";
+import { g as fa } from "./exerciseService.hgv8slgW.js";
+import { p as ga, s as _a, a as ba } from "./store.BkX6ANw_.js";
+var ha = u(
+    '<img src="/Pastry-Chasers-Main/images/favouritedButton.png" alt="favourited" class="detail-icon"/>'
+  ),
+  ya = u(
+    '<img src="/Pastry-Chasers-Main/images/favouriteButton.png" alt="favourite" class="detail-icon"/>'
+  ),
+  xa = u(
+    '<div class="popup popup-modal">Added to favourites <img src="/Pastry-Chasers-Main/images/happyIcon.png" alt="smiley face" class="detail-icon"/></div>'
+  ),
+  Ma = u(
+    '<div class="popup popup-modal">Removed from favourites <img src="/Pastry-Chasers-Main/images/sadIcon.png" alt="sad face" class="detail-icon"/></div>'
+  ),
+  wa = u(
+    '<div class="container"><img src="/Pastry-Chasers-Main/images/exerciseImage.png" class="img-fluid rounded-corners img-top"/> <h2 class="modal-header"> </h2> <div class="exercise-details"><div class="detail-item"><img src="/Pastry-Chasers-Main/images/difficulty-icon.png" alt="Difficulty" class="detail-icon"/> <span class="detail-name">Difficulty:</span> <span class="detail-info"> </span></div> <div class="detail-item"><img src="/Pastry-Chasers-Main/images/equipment-icon.png" alt="Equipment" class="detail-icon"/> <span class="detail-name">Equipment:</span> <span class="detail-info"> </span></div> <div class="detail-item"><img src="/Pastry-Chasers-Main/images/muscle-icon.png" alt="Muscle" class="detail-icon"/> <span class="detail-name">Muscle:</span> <span class="detail-info"> </span></div> <br/> <div class="center-content modal-action-bar"><button class="btn primary-button">View Full Exercise</button> <button class="image-button"><!></button> <!> <!></div> <div class="sr-detail-item modal-badge-container"><span class="badge rounded-pill text-bg-secondary"> </span></div></div></div>'
+  );
+function Ea(V, D) {
+  sa(D, !1);
+  let e = ga(D, "exercise", 8),
+    n = O(!1),
+    E = O(!1),
+    f = O(!1);
+  const X = (a) => {
+      ba(a), (window.location.href = "/Pastry-Chasers-Main/displayExercise");
+    },
+    k = (a) => {
+      d(n, S(a.name)),
+        R(n)
+          ? (na(a.name), d(f, !0), setTimeout(() => d(f, !1), 2e3))
+          : (la(a), d(E, !0), setTimeout(() => d(E, !1), 2e3)),
+        d(n, !R(n));
+    };
+  oa(() => {
+    typeof window < "u" && typeof localStorage < "u" && d(n, S(e().name));
+  });
+  function g(a) {
+    return a ? a.replace(/_/g, " ") : "";
+  }
+  const m = (a) => a.charAt(0).toUpperCase() + a.slice(1);
+  va(
+    () => (p(e()), S),
+    () => {
+      e() && d(n, S(e().name));
+    }
+  ),
+    ua(),
+    ea();
+  var C = wa(),
+    L = s(C),
+    _ = i(L, 2),
+    T = s(_, !0);
+  t(_);
+  var b = i(_, 2),
+    P = s(b),
+    U = i(s(P), 4),
+    Y = s(U, !0);
+  t(U), t(P);
+  var r = i(P, 2),
+    o = i(s(r), 4),
+    z = s(o, !0);
+  t(o), t(r);
+  var h = i(r, 2),
+    $ = i(s(h), 4),
+    A = s($, !0);
+  t($), t(h);
+  var F = i(h, 4),
+    y = s(F),
+    x = i(y, 2),
+    Z = s(x);
+  {
+    var j = (a) => {
+        var l = ha();
+        v(a, l);
+      },
+      G = (a) => {
+        var l = ya();
+        v(a, l);
+      };
+    B(Z, (a) => {
+      R(n) ? a(j) : a(G, !1);
+    });
+  }
+  t(x);
+  var I = i(x, 2);
+  {
+    var H = (a) => {
+      var l = xa();
+      v(a, l);
+    };
+    B(I, (a) => {
+      R(E) && a(H);
+    });
+  }
+  var c = i(I, 2);
+  {
+    var J = (a) => {
+      var l = Ma();
+      v(a, l);
+    };
+    B(c, (a) => {
+      R(f) && a(J);
+    });
+  }
+  t(F);
+  var Q = i(F, 2),
+    W = s(Q),
+    ia = s(W, !0);
+  t(W),
+    t(Q),
+    t(b),
+    t(C),
+    ma(
+      (a, l, ra) => {
+        _a(L, "alt", (p(e()), M(() => e().name))),
+          q(T, (p(e()), M(() => e().name))),
+          q(Y, a),
+          q(z, l),
+          q(A, ra),
+          q(ia, (p(e()), M(() => e().type)));
+      },
+      [
+        () => (p(e()), M(() => m(e().difficulty))),
+        () => (p(e()), M(() => m(g(e().equipment)))),
+        () => (p(e()), M(() => m(g(e().muscle)))),
+      ]
+    ),
+    w("click", y, () => X(e())),
+    w("click", x, () => k(e())),
+    v(V, C),
+    ta();
+}
+var ka = u("<p>Loading...</p>"),
+  Ca = u(
+    '<div class="modal fade show" tabindex="-1" style="display: block;"><div class="modal-dialog"><div class="modal-content"><div class="modal-header modal-background"><button type="button" class="btn-close"></button></div> <div class="modal-body modal-body"><!></div> <div class="modal-footer modal-background"><button class="btn primary-button">Close</button> <button class="btn primary-button">Roll Again <img src="/Pastry-Chasers-Main/images/dice.png" alt="dice" class="detail-icon"/></button></div></div></div></div> <div class="modal-backdrop fade show"></div>',
+    1
+  ),
+  Pa = u(
+    '<div class="center-content"><button class="btn primary-button btn-lg">Get Random Exercise</button></div> <!>',
+    1
+  );
+function Ra(V, D) {
+  sa(D, !1);
+  const [e, n] = ca(),
+    E = () => K(m, "$showModal", e),
+    f = () => K(k, "$exercises", e),
+    X = () => K(g, "$currentExerciseIndex", e);
+  let k = N([]),
+    g = N(0),
+    m = N(!1);
+  async function C() {
+    const o = await fa({ type: "strength", limit: 50 });
+    k.set(Array.isArray(o) ? o : []), g.set(0), m.set(!0);
+  }
+  function L() {
+    const r = da(k);
+    g.update(
+      (o) => (
+        console.log("Roll Again clicked", o, r.length),
+        r.length > 0 ? (o + 1) % r.length : 0
+      )
+    );
+  }
+  function _() {
+    m.set(!1);
+  }
+  ea();
+  var T = Pa(),
+    b = aa(T),
+    P = s(b);
+  t(b);
+  var U = i(b, 2);
+  {
+    var Y = (r) => {
+      var o = Ca(),
+        z = aa(o),
+        h = s(z),
+        $ = s(h),
+        A = s($),
+        F = s(A);
+      t(A);
+      var y = i(A, 2),
+        x = s(y);
+      {
+        var Z = (c) => {
+            Ea(c, {
+              get exercise() {
+                return f()[X()];
+              },
+            });
+          },
+          j = (c) => {
+            var J = ka();
+            v(c, J);
+          };
+        B(x, (c) => {
+          f().length > 0 ? c(Z) : c(j, !1);
+        });
+      }
+      t(y);
+      var G = i(y, 2),
+        I = s(G),
+        H = i(I, 2);
+      t(G),
+        t($),
+        t(h),
+        t(z),
+        pa(2),
+        w("click", F, _),
+        w("click", I, _),
+        w("click", H, L),
+        v(r, o);
+    };
+    B(U, (r) => {
+      E() && r(Y);
+    });
+  }
+  w("click", P, C), v(V, T), ta(), n();
+}
+export { Ra as default };
