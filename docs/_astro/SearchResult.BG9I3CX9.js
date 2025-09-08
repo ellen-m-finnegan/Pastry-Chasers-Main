@@ -1,1 +1,328 @@
-import{f as Ee,o as Qe,i as je,a as se,c as g,s as Me,w as _,h as Ne}from"./favourite.D8urFDSY.js";import{a6 as Ie,a7 as Ve,u as h,a8 as Ae,o as Be,F as P,a9 as De,l as Ge,a as He,f as L,t as ae,i as b,b as x,p as We,c as Ye,d as i,Z as w,r as c,e as v,g as j,m as Ze,s as pe,h as ge,_ as ze,Y as _e}from"./render.BE2Fuemi.js";import{e as Je,i as Ke}from"./each.CqI28z09.js";import{r as C,c as F}from"./store.BkX6ANw_.js";import{g as Oe}from"./exerciseService.hgv8slgW.js";import Ue from"./ExerciseCard.Bl9EILlE.js";function Xe(s,n,o=n){var m=new WeakSet;Ie(s,"input",async l=>{var a=l?s.defaultValue:s.value;if(a=te(s)?re(a):a,o(a),P!==null&&m.add(P),await Ve(),a!==(a=n())){var d=s.selectionStart,$=s.selectionEnd;s.value=a??"",$!==null&&(s.selectionStart=d,s.selectionEnd=Math.min($,s.value.length))}}),(Be&&s.defaultValue!==s.value||h(n)==null&&s.value)&&(o(te(s)?re(s.value):s.value),P!==null&&m.add(P)),Ae(()=>{var l=n();if(s===document.activeElement){var a=De??P;if(m.has(a))return}te(s)&&l===re(s.value)||s.type==="date"&&!l&&!s.value||l!==s.value&&(s.value=l??"")})}function te(s){var n=s.type;return n==="number"||n==="range"}function re(s){return s===""?null:+s}async function es({query:s=null,muscle:n=null,type:o=null,difficulty:m=null,equipment:l=null}){const a={};s&&(a.name=s),n&&(a.muscle=n),o&&(a.type=o),m&&(a.difficulty=m),l&&(a.equipment=l);try{return await Oe(a)}catch(d){throw console.error("Failed to fetch search results:",d),new Error("Failed to fetch search results.")}}var ss=L('<div class="text-center my-4"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>'),as=L('<div class="alert alert-danger" role="alert"> </div>'),ts=L('<div class="alert alert-warning text-center" role="alert">No exercises found. Try making a new search.</div>'),rs=L('<div class="card-group row row-cols-1 row-cols-md-3 g-4"></div> <div class="pagination-controls d-flex justify-content-between align-items-center mt-4"><button class="btn primary-button">Previous</button> <span> </span> <button class="btn primary-button">Next</button></div>',1),ls=L('<div class="container-fluid section-background"><form class="d-flex flex-column align-items-end" id="searchForm"><div class="d-flex mb-3 w-100"><input class="form-control me-2" type="text" id="searchQuery" placeholder="Search exercises..."/> <button class="btn primary-button" type="submit">Search</button></div> <div id="typeFilter" class="d-flex flex-wrap justify-content-start"><div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="abdominalsCheckbox" value="abdominals"/> <label class="form-check-label" for="abdominalsCheckbox">Abdominals</label></div> <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="bicepsCheckbox" value="biceps"/> <label class="form-check-label" for="bicepsCheckbox">Biceps</label></div> <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="chestCheckbox" value="chest"/> <label class="form-check-label" for="chestCheckbox">Chest</label></div> <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="glutesCheckbox" value="glutes"/> <label class="form-check-label" for="glutesCheckbox">Glutes</label></div> <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="hamstringsCheckbox" value="hamstrings"/> <label class="form-check-label" for="hamstringsCheckbox">Hamstrings</label></div></div></form> <!> <div class="container"><!></div></div>');function fs(s,n){Ye(n,!1);const[o,m]=Me(),l=()=>g(M,"$query",o),a=()=>g(ce,"$selectedType",o),d=()=>g(k,"$currentPage",o),$=()=>g(N,"$error",o),le=()=>g(E,"$searchResults",o),ke=()=>g(xe,"$paginatedResults",o),q=()=>g(I,"$totalResults",o);let E=_([]),M=_(""),N=_(""),k=_(1),I=_(0),ce=_([]),ye=_(""),R=Ze(!1);const S=9;let oe;const xe=Ee([E,k],([e,t])=>{const r=(t-1)*S;return e.slice(r,r+S)}),we=Ce(ie,1e3);function Ce(e,t){return function(...r){clearTimeout(oe),oe=setTimeout(()=>e.apply(this,r),t)}}Qe(async()=>{if(typeof window<"u"&&typeof sessionStorage<"u"){console.log("Running in the browser");const e=sessionStorage.getItem("searchQuery");console.log("Stored query:",e),e&&M.set(e)}});async function ie(e,t){pe(R,!0),N.set("");try{const r={};t.length>0&&(r.muscle=t.join(",")),r.limit=50;const y=await es(r);let p=y;if(e){const u=e.toLowerCase();p=y.filter(f=>f.name.toLowerCase().includes(u)||f.muscle?.toLowerCase().includes(u)||f.type?.toLowerCase().includes(u)||f.equipment?.toLowerCase().includes(u)||f.difficulty?.toLowerCase().includes(u))}E.set(p),I.set(p.length),k.set(1)}catch{N.set("Failed to fetch search results."),E.set([]),I.set(0)}finally{pe(R,!1)}}function $e(e){e.preventDefault();const t=e.target.querySelector("#searchQuery").value;t&&(ye.set(t),sessionStorage.setItem("searchQuery",t),a().join(","),ie(t,0),k.set(1))}const ne=()=>{window.scrollTo({top:0,behavior:"smooth"})};function Re(){k.update(e=>e+1),ne()}function Se(){k.update(e=>e>1?e-1:e),ne()}function T(e){ce.update(t=>t.includes(e)?t.filter(r=>r!==e):[...t,e])}Ge(()=>(l(),a(),d()),()=>{(l()||a().length>0)&&we(l(),(d()-1)*S,a())}),He(),je();var V=ls(),Q=i(V),A=i(Q),ue=i(A);C(ue),w(2),c(A);var de=v(A,2),B=i(de),D=i(B);C(D),w(2),c(B);var G=v(B,2),H=i(G);C(H),w(2),c(G);var W=v(G,2),Y=i(W);C(Y),w(2),c(W);var Z=v(W,2),z=i(Z);C(z),w(2),c(Z);var fe=v(Z,2),J=i(fe);C(J),w(2),c(fe),c(de),c(Q);var ve=v(Q,2);{var Te=e=>{var t=ss();x(e,t)};se(ve,e=>{j(R)&&e(Te)})}var he=v(ve,2),Pe=i(he);{var Fe=e=>{var t=as(),r=i(t,!0);c(t),ae(()=>ge(r,$())),x(e,t)},Le=e=>{var t=ze(),r=_e(t);{var y=u=>{var f=ts();x(u,f)},p=u=>{var f=rs(),K=_e(f);Je(K,5,ke,Ke,(X,ee)=>{Ue(X,{get exercise(){return j(ee)}})}),c(K);var me=v(K,2),O=i(me),U=v(O,2),qe=i(U);c(U);var be=v(U,2);c(me),ae((X,ee)=>{O.disabled=d()===1,ge(qe,`Page ${d()??""} of ${X??""}`),be.disabled=ee},[()=>(q(),h(()=>Math.ceil(q()/S))),()=>(d(),q(),h(()=>d()===Math.ceil(q()/S)))]),b("click",O,Se),b("click",be,Re),x(u,f)};se(r,u=>{le(),j(R),h(()=>le().length===0&&!j(R))?u(y):u(p,!1)},!0)}x(e,t)};se(Pe,e=>{$()?e(Fe):e(Le,!1)})}c(he),c(V),ae((e,t,r,y,p)=>{F(D,e),F(H,t),F(Y,r),F(z,y),F(J,p)},[()=>(a(),h(()=>a().includes("abdominals"))),()=>(a(),h(()=>a().includes("biceps"))),()=>(a(),h(()=>a().includes("chest"))),()=>(a(),h(()=>a().includes("glutes"))),()=>(a(),h(()=>a().includes("hamstrings")))]),Xe(ue,l,e=>Ne(M,e)),b("change",D,()=>T("abdominals")),b("change",H,()=>T("biceps")),b("change",Y,()=>T("chest")),b("change",z,()=>T("glutes")),b("change",J,()=>T("hamstrings")),b("submit",Q,$e),x(s,V),We(),m()}export{fs as default};
+import {
+  f as Ee,
+  o as Qe,
+  i as je,
+  a as se,
+  c as g,
+  s as Me,
+  w as _,
+  h as Ne,
+} from "./favourite.D8urFDSY.js";
+import {
+  a6 as Ie,
+  a7 as Ve,
+  u as h,
+  a8 as Ae,
+  o as Be,
+  F as P,
+  a9 as De,
+  l as Ge,
+  a as He,
+  f as L,
+  t as ae,
+  i as b,
+  b as x,
+  p as We,
+  c as Ye,
+  d as i,
+  Z as w,
+  r as c,
+  e as v,
+  g as j,
+  m as Ze,
+  s as pe,
+  h as ge,
+  _ as ze,
+  Y as _e,
+} from "./render.BE2Fuemi.js";
+import { e as Je, i as Ke } from "./each.CqI28z09.js";
+import { r as C, c as F } from "./store.BkX6ANw_.js";
+import { g as Oe } from "./exerciseService.hgv8slgW.js";
+import Ue from "./ExerciseCard.Bl9EILlE.js";
+function Xe(s, n, o = n) {
+  var m = new WeakSet();
+  Ie(s, "input", async (l) => {
+    var a = l ? s.defaultValue : s.value;
+    if (
+      ((a = te(s) ? re(a) : a),
+      o(a),
+      P !== null && m.add(P),
+      await Ve(),
+      a !== (a = n()))
+    ) {
+      var d = s.selectionStart,
+        $ = s.selectionEnd;
+      (s.value = a ?? ""),
+        $ !== null &&
+          ((s.selectionStart = d),
+          (s.selectionEnd = Math.min($, s.value.length)));
+    }
+  }),
+    ((Be && s.defaultValue !== s.value) || (h(n) == null && s.value)) &&
+      (o(te(s) ? re(s.value) : s.value), P !== null && m.add(P)),
+    Ae(() => {
+      var l = n();
+      if (s === document.activeElement) {
+        var a = De ?? P;
+        if (m.has(a)) return;
+      }
+      (te(s) && l === re(s.value)) ||
+        (s.type === "date" && !l && !s.value) ||
+        (l !== s.value && (s.value = l ?? ""));
+    });
+}
+function te(s) {
+  var n = s.type;
+  return n === "number" || n === "range";
+}
+function re(s) {
+  return s === "" ? null : +s;
+}
+async function es({
+  query: s = null,
+  muscle: n = null,
+  type: o = null,
+  difficulty: m = null,
+  equipment: l = null,
+}) {
+  const a = {};
+  s && (a.name = s),
+    n && (a.muscle = n),
+    o && (a.type = o),
+    m && (a.difficulty = m),
+    l && (a.equipment = l);
+  try {
+    return await Oe(a);
+  } catch (d) {
+    throw (
+      (console.error("Failed to fetch search results:", d),
+      new Error("Failed to fetch search results."))
+    );
+  }
+}
+var ss = L(
+    '<div class="text-center my-4"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>'
+  ),
+  as = L('<div class="alert alert-danger" role="alert"> </div>'),
+  ts = L(
+    '<div class="alert alert-warning text-center" role="alert">No exercises found. Try making a new search.</div>'
+  ),
+  rs = L(
+    '<div class="card-group row row-cols-1 row-cols-md-3 g-4"></div> <div class="pagination-controls d-flex justify-content-between align-items-center mt-4"><button class="btn primary-button">Previous</button> <span> </span> <button class="btn primary-button">Next</button></div>',
+    1
+  ),
+  ls = L(
+    '<div class="container-fluid section-background"><form class="d-flex flex-column align-items-end" id="searchForm"><div class="d-flex mb-3 w-100"><input class="form-control me-2" type="text" id="searchQuery" placeholder="Search exercises..."/> <button class="btn primary-button" type="submit">Search</button></div> <div id="typeFilter" class="d-flex flex-wrap justify-content-start"><div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="abdominalsCheckbox" value="abdominals"/> <label class="form-check-label" for="abdominalsCheckbox">Abdominals</label></div> <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="bicepsCheckbox" value="biceps"/> <label class="form-check-label" for="bicepsCheckbox">Biceps</label></div> <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="chestCheckbox" value="chest"/> <label class="form-check-label" for="chestCheckbox">Chest</label></div> <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="glutesCheckbox" value="glutes"/> <label class="form-check-label" for="glutesCheckbox">Glutes</label></div> <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="hamstringsCheckbox" value="hamstrings"/> <label class="form-check-label" for="hamstringsCheckbox">Hamstrings</label></div></div></form> <!> <div class="container"><!></div></div>'
+  );
+function fs(s, n) {
+  Ye(n, !1);
+  const [o, m] = Me(),
+    l = () => g(M, "$query", o),
+    a = () => g(ce, "$selectedType", o),
+    d = () => g(k, "$currentPage", o),
+    $ = () => g(N, "$error", o),
+    le = () => g(E, "$searchResults", o),
+    ke = () => g(xe, "$paginatedResults", o),
+    q = () => g(I, "$totalResults", o);
+  let E = _([]),
+    M = _(""),
+    N = _(""),
+    k = _(1),
+    I = _(0),
+    ce = _([]),
+    ye = _(""),
+    R = Ze(!1);
+  const S = 9;
+  let oe;
+  const xe = Ee([E, k], ([e, t]) => {
+      const r = (t - 1) * S;
+      return e.slice(r, r + S);
+    }),
+    we = Ce(ie, 1e3);
+  function Ce(e, t) {
+    return function (...r) {
+      clearTimeout(oe), (oe = setTimeout(() => e.apply(this, r), t));
+    };
+  }
+  Qe(async () => {
+    if (typeof window < "u" && typeof sessionStorage < "u") {
+      console.log("Running in the browser");
+      const e = sessionStorage.getItem("searchQuery");
+      console.log("Stored query:", e), e && M.set(e);
+    }
+  });
+  async function ie(e, t) {
+    pe(R, !0), N.set("");
+    try {
+      const r = {};
+      t.length > 0 && (r.muscle = t.join(",")), (r.limit = 50);
+      const y = await es(r);
+      let p = y;
+      if (e) {
+        const u = e.toLowerCase();
+        p = y.filter(
+          (f) =>
+            f.name.toLowerCase().includes(u) ||
+            f.muscle?.toLowerCase().includes(u) ||
+            f.type?.toLowerCase().includes(u) ||
+            f.equipment?.toLowerCase().includes(u) ||
+            f.difficulty?.toLowerCase().includes(u)
+        );
+      }
+      E.set(p), I.set(p.length), k.set(1);
+    } catch {
+      N.set("Failed to fetch search results."), E.set([]), I.set(0);
+    } finally {
+      pe(R, !1);
+    }
+  }
+  function $e(e) {
+    e.preventDefault();
+    const t = e.target.querySelector("#searchQuery").value;
+    t &&
+      (ye.set(t),
+      sessionStorage.setItem("searchQuery", t),
+      a().join(","),
+      ie(t, 0),
+      k.set(1));
+  }
+  const ne = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  function Re() {
+    k.update((e) => e + 1), ne();
+  }
+  function Se() {
+    k.update((e) => (e > 1 ? e - 1 : e)), ne();
+  }
+  function T(e) {
+    ce.update((t) => (t.includes(e) ? t.filter((r) => r !== e) : [...t, e]));
+  }
+  Ge(
+    () => (l(), a(), d()),
+    () => {
+      (l() || a().length > 0) && we(l(), (d() - 1) * S, a());
+    }
+  ),
+    He(),
+    je();
+  var V = ls(),
+    Q = i(V),
+    A = i(Q),
+    ue = i(A);
+  C(ue), w(2), c(A);
+  var de = v(A, 2),
+    B = i(de),
+    D = i(B);
+  C(D), w(2), c(B);
+  var G = v(B, 2),
+    H = i(G);
+  C(H), w(2), c(G);
+  var W = v(G, 2),
+    Y = i(W);
+  C(Y), w(2), c(W);
+  var Z = v(W, 2),
+    z = i(Z);
+  C(z), w(2), c(Z);
+  var fe = v(Z, 2),
+    J = i(fe);
+  C(J), w(2), c(fe), c(de), c(Q);
+  var ve = v(Q, 2);
+  {
+    var Te = (e) => {
+      var t = ss();
+      x(e, t);
+    };
+    se(ve, (e) => {
+      j(R) && e(Te);
+    });
+  }
+  var he = v(ve, 2),
+    Pe = i(he);
+  {
+    var Fe = (e) => {
+        var t = as(),
+          r = i(t, !0);
+        c(t), ae(() => ge(r, $())), x(e, t);
+      },
+      Le = (e) => {
+        var t = ze(),
+          r = _e(t);
+        {
+          var y = (u) => {
+              var f = ts();
+              x(u, f);
+            },
+            p = (u) => {
+              var f = rs(),
+                K = _e(f);
+              Je(K, 5, ke, Ke, (X, ee) => {
+                Ue(X, {
+                  get exercise() {
+                    return j(ee);
+                  },
+                });
+              }),
+                c(K);
+              var me = v(K, 2),
+                O = i(me),
+                U = v(O, 2),
+                qe = i(U);
+              c(U);
+              var be = v(U, 2);
+              c(me),
+                ae(
+                  (X, ee) => {
+                    (O.disabled = d() === 1),
+                      ge(qe, `Page ${d() ?? ""} of ${X ?? ""}`),
+                      (be.disabled = ee);
+                  },
+                  [
+                    () => (q(), h(() => Math.ceil(q() / S))),
+                    () => (d(), q(), h(() => d() === Math.ceil(q() / S))),
+                  ]
+                ),
+                b("click", O, Se),
+                b("click", be, Re),
+                x(u, f);
+            };
+          se(
+            r,
+            (u) => {
+              le(), j(R), h(() => le().length === 0 && !j(R)) ? u(y) : u(p, !1);
+            },
+            !0
+          );
+        }
+        x(e, t);
+      };
+    se(Pe, (e) => {
+      $() ? e(Fe) : e(Le, !1);
+    });
+  }
+  c(he),
+    c(V),
+    ae(
+      (e, t, r, y, p) => {
+        F(D, e), F(H, t), F(Y, r), F(z, y), F(J, p);
+      },
+      [
+        () => (a(), h(() => a().includes("abdominals"))),
+        () => (a(), h(() => a().includes("biceps"))),
+        () => (a(), h(() => a().includes("chest"))),
+        () => (a(), h(() => a().includes("glutes"))),
+        () => (a(), h(() => a().includes("hamstrings"))),
+      ]
+    ),
+    Xe(ue, l, (e) => Ne(M, e)),
+    b("change", D, () => T("abdominals")),
+    b("change", H, () => T("biceps")),
+    b("change", Y, () => T("chest")),
+    b("change", z, () => T("glutes")),
+    b("change", J, () => T("hamstrings")),
+    b("submit", Q, $e),
+    x(s, V),
+    We(),
+    m();
+}
+export { fs as default };
