@@ -5,14 +5,14 @@
 
 /* Primary button styling */
 .primary-button {
-  background-color: #6d8d98 !important;
+  background-color: #1f3339 !important;
   border-color: #6d8d98 !important;
   color: #ffffff !important;
 }
 
 /* Secondary button styling */
 .secondary-button {
-  background-color: #ff4d6d !important;
+  background-color: #b31237 !important;
   border-color: #ff4d6d !important;
   color: #ffffff !important;
 }
@@ -291,7 +291,7 @@ body {
 }
 
 /* Container background for sections */
-.container-background {
+.section-background {
   background-color: #d19a66;
   padding: 25px;
   border-radius: 10px;
@@ -337,19 +337,19 @@ body {
 }
 
 /* Title and button container for page headers */
-.title-button-container {
+.header-title-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* Button container for card and modal actions */
-.button-container {
+.action-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.modal-button-container {
+.modal-action-bar {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -382,16 +382,16 @@ body {
 .story,
 .development,
 .future-plans,
-.call-to-action {
+.get-involved {
   margin-bottom: 2rem;
 }
-.call-to-action {
+.get-involved {
   background-color: #ff4d6d;
   color: #ffffff;
   padding: 1rem;
   border-radius: 0.5rem;
 }
-.call-to-action a {
+.get-involved a {
   color: #ffffff;
   text-decoration: underline;
 }
@@ -417,7 +417,7 @@ body {
 }
 
 /* Contact form styling */
-.contact-form {
+.get-in-touch-form {
   padding: 20px;
   border: 1px solid #f4f2f2;
   border-radius: 10px;
@@ -446,12 +446,12 @@ body {
 }
 
 /* Development journey section styling */
-.development-journey h2,
-.development-journey h5 {
+.about h3,
+.about h2 {
   margin-bottom: 15px;
 }
-.development-journey p,
-.development-journey ul {
+.about p,
+.about ul {
   margin-top: 0;
 }
 .flex-grow-1 {

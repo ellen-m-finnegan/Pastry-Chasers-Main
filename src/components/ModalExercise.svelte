@@ -69,7 +69,7 @@
       alt={exercise.name}
     />
 
-  <h5 class="modal-header">{exercise.name}</h5>
+  <h2 class="modal-header">{exercise.name}</h2>
   <div class="exercise-details">
     <div class="detail-item">
       <img 
@@ -100,7 +100,7 @@
     </div>
     <br />
     <!-- Buttons for viewing and favouriting -->
-    <div class="center-content modal-button-container">
+    <div class="center-content modal-action-bar">
       <!-- View full exercise button -->
       <button class="btn primary-button" on:click={() => setCurrentExercise(exercise)}>
         View Full Exercise

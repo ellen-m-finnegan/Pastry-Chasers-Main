@@ -67,7 +67,7 @@
       />
 
     <div class="card-body">
-      <h5 class="card-title">{exercise.name}</h5>
+      <h2 class="card-title">{exercise.name}</h2>
       <div class="sr-exercise-details">
         <div class="sr-detail-item">
           <img
@@ -96,7 +96,7 @@
           <span class="sr-detail-name">Muscle:</span>
           <span class="sr-detail-info">{capitalizeFirstLetter(formatUnderscore(exercise.muscle))}</span>
         </div>
-        <div class="button-container">
+        <div class="action-bar">
           <button
             class="btn btn-primary"
             on:click={() => setCurrentExercise(exercise)}

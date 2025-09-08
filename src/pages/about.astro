@@ -9,12 +9,12 @@ import BackToTop from "../components/BackToTop.astro";
 <BaseLayout>
   <!-- Main content for the About page -->
   <div slot="main" class="container mt-5">
-    <div class="title-button-container">
+    <div class="header-title-actions">
       <h1 class="display-4">About Pastry Chasers</h1>
       <img src="/Pastry-Chasers-Main/images/running-croissant2.png" alt="running croissant" />
     </div>
 
-    <div class="container container-background">
+    <div class="container section-background">
       <!-- Section 1: Story with Pastry Chasers Image -->
       <div class="row">
         <!-- Left column: Story behind Pastry Chasers -->
@@ -44,7 +44,7 @@ import BackToTop from "../components/BackToTop.astro";
 
         <!-- Right column: Call to action for feedback -->
         <div class="col-md-6 d-flex justify-content-center align-items-center">
-          <section class="call-to-action">
+          <section class="get-involved">
             <h2>Get Involved</h2>
             <p>
               I’d love to hear your feedback and suggestions! Feel free to reach
@@ -57,12 +57,12 @@ import BackToTop from "../components/BackToTop.astro";
     </div>
 
     <!-- Section 2: Development Journey and Highlights -->
-    <div class="container container-background">
+    <div class="container section-background">
       <div class="row">
 
         <!-- Left column: Development journey description -->
         <div class="col-md-6 d-flex flex-column justify-content-center">
-          <section class="development-journey">
+          <section class="about">
             <h2
               class="bg-secondary text-white px-2 py-1 rounded"
               style="display: inline-block;"
@@ -80,12 +80,12 @@ import BackToTop from "../components/BackToTop.astro";
         <!-- Right column: List of project highlights -->
         <div class="col-md-6 d-flex flex-column justify-content-center">
           <section class="development-journey">
-            <h5
+            <h3
               class="bg-secondary text-white px-2 py-1 rounded"
               style="display: inline-block;"
             >
               Highlights
-            </h5>
+            </h3>
             <ul>
               <li>
                 Built with Astro, Svelte, HTML, CSS, Bootstrap, and JavaScript
@@ -107,7 +107,7 @@ import BackToTop from "../components/BackToTop.astro";
     </div>
 
     <!-- Section 3: Contact Form for feedback -->
-    <div class="container container-background mt-5">
+    <div class="container section-background mt-5">
       <div class="row">
         <!-- Left column: Contact form -->
         <div class="col-md-6">
@@ -117,12 +117,12 @@ import BackToTop from "../components/BackToTop.astro";
           >
             Get in Touch
           </h2>
-          <section class="contact-form">
+          <section class="get-in-touch-form">
             <h3>Contact Us</h3>
             <form
               action="https://formspree.io/f/xvgboqwn"
               method="POST"
-              id="contact-form"
+              id="get-in-touch-form"
             >
               <div class="form-group">
                 <label for="name">Name:</label>
