@@ -91,6 +91,10 @@ Accessibility and Lighthouse reports are available to view in the `docs` folder.
 
 - The exercise API from [API Ninjas](https://www.api-ninjas.com/api/exercises) can occasionally be down for free users, it does go back up very quickly, so if you experience any issues check out their page
 - The search function only works with complete exercise name matches due to the API e.g. landmine twist or clean and press and not landmine or clean.
+- I attempted to update the heading order and contrast issues brought to light in the accessibility
+  report section of the lighthouse report, these changes can be seen in the css file and index and
+  other pages, but these changes are not appearing on the GitHub pages site. These can be seen when the site is ran locally. I have attached lighthouse reports for the same latest build for both
+  github pages and the locally ran build.
 
 ## Credits
 
